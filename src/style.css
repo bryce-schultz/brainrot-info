@@ -47,7 +47,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
     background: var(--primary-bg);
     color: var(--text-primary);
-    min-height: 100vh;
+    min-height: 100dvh;
     /* Always show the scrollbar track so its width is reserved even on short pages.
        Without this, filtered search results that don't scroll cause a layout shift
        when the bar appears/disappears. */

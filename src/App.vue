@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, watch } from 'vue';
 import Sidebar from './components/Sidebar.vue';
 import RebirthCard from './components/RebirthCard.vue';
 import BrainrotCard from './components/BrainrotCard.vue';
@@ -149,6 +149,10 @@ const handleBrainrotSearch = (name) => {
   navigate('brainrots', name);
 };
 
+watch(currentPage, () => {
+  window.scrollTo(0, 0);
+});
+
 onMounted(async () => {
   applyHash();
   window.addEventListener('popstate', applyHash);
@@ -162,15 +166,15 @@ onMounted(async () => {
 
   // All four data files are independent — fetch in parallel to cut total load time
   // from ~4× round-trips down to ~1× on slow connections (e.g. 4G).
-  const [rebirth, brainrots, types, traits] = await Promise.allSettled([
-    fetchJson('/rebirth.json'),
+  const [rebirths, brainrots, types, traits] = await Promise.allSettled([
+    fetchJson('/rebirths.json'),
     fetchJson('/brainrots.json'),
     fetchJson('/types.json'),
     fetchJson('/traits.json'),
   ]);
 
-  if (rebirth.status   === 'fulfilled') rebirthData.value   = rebirth.value.rebirth_tiers;
-  else console.error('Error loading rebirth data:', rebirth.reason);
+  if (rebirths.status   === 'fulfilled') rebirthData.value   = rebirths.value.rebirths;
+  else console.error('Error loading rebirth data:', rebirths.reason);
 
   if (brainrots.status === 'fulfilled') brainrotsData.value = brainrots.value.brainrots;
   else console.error('Error loading brainrots data:', brainrots.reason);
