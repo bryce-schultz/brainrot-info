@@ -1,4 +1,156 @@
 {
+    "rebirths": [
+        {
+            "tier": 1,
+            "requiredCash": 1000000,
+            "requiredBrainrots": [
+                "Trippi Troppi",
+                "Tung Tung Tung Sahur"
+            ],
+            "bonus": "2x multiplier"
+        },
+        {
+            "tier": 2,
+            "requiredCash": 3000000,
+            "requiredBrainrots": [
+                "Boneca Ambalabu",
+                "Brr Brr Patapim"
+            ],
+            "bonus": "3x multiplier"
+        },
+        {
+            "tier": 3,
+            "requiredCash": 12500000,
+            "requiredBrainrots": [
+                "Trulimero Trulicina",
+                "Chimpanzini Bananini"
+            ],
+            "bonus": "4x multiplier"
+        },
+        {
+            "tier": 4,
+            "requiredCash": 35000000,
+            "requiredBrainrots": [
+                "Chef Crabracadabra",
+                "Glorbo Fruttodillo"
+            ],
+            "bonus": "5x multiplier"
+        },
+        {
+            "tier": 5,
+            "requiredCash": 100000000,
+            "requiredBrainrots": [
+                "Frigo Camelo",
+                "Orangutini Ananassini"
+            ],
+            "bonus": "6x multiplier"
+        },
+        {
+            "tier": 6,
+            "requiredCash": 250000000,
+            "requiredBrainrots": [
+                "Bombardiro Crocodilo",
+                "Bombombini Gusini"
+            ],
+            "bonus": "7x multiplier"
+        },
+        {
+            "tier": 7,
+            "requiredCash": 1000000000,
+            "requiredBrainrots": [
+                "Cocofanto Elefanto"
+            ],
+            "bonus": "8x multiplier"
+        },
+        {
+            "tier": 8,
+            "requiredCash": 5000000000,
+            "requiredBrainrots": [
+                "Tralalero Tralala"
+            ],
+            "bonus": "9x multiplier"
+        },
+        {
+            "tier": 9,
+            "requiredCash": 25000000000,
+            "requiredBrainrots": [
+                "Odin Din Din Dun"
+            ],
+            "bonus": "10x multiplier"
+        },
+        {
+            "tier": 10,
+            "requiredCash": 200000000000,
+            "requiredBrainrots": [
+                "La Vaca Saturno Saturnita"
+            ],
+            "bonus": "11x multiplier"
+        },
+        {
+            "tier": 11,
+            "requiredCash": 1000000000000,
+            "requiredBrainrots": [
+                "Torrtuginni Dragonfrutinni"
+            ],
+            "bonus": "12x multiplier"
+        },
+        {
+            "tier": 12,
+            "requiredCash": 10000000000000,
+            "requiredBrainrots": [
+                "Trenostruzzo Turbo 3000"
+            ],
+            "bonus": "13x multiplier"
+        },
+        {
+            "tier": 13,
+            "requiredCash": 50000000000000,
+            "requiredBrainrots": [
+                "Orcalero Orcala"
+            ],
+            "bonus": "14x multiplier"
+        },
+        {
+            "tier": 14,
+            "requiredCash": 200000000000000,
+            "requiredBrainrots": [
+                "Garamaramadungdung"
+            ],
+            "bonus": "15x multiplier"
+        },
+        {
+            "tier": 15,
+            "requiredCash": 1000000000000000,
+            "requiredBrainrots": [
+                "La Grande Combinacion"
+            ],
+            "bonus": "16x multiplier"
+        },
+        {
+            "tier": 16,
+            "requiredCash": 5000000000000000,
+            "requiredBrainrots": [
+                "La Esok Sekolah"
+            ],
+            "bonus": "17x multiplier"
+        },
+        {
+            "tier": 17,
+            "requiredCash": 10000000000000000,
+            "requiredBrainrots": [
+                "Cannelloni Dragoni"
+            ],
+            "bonus": "18x multiplier"
+        },
+        {
+            "tier": 18,
+            "requiredCash": 25000000000000000,
+            "requiredBrainrots": [
+                "Gigalitraktos Spidorobos"
+            ],
+            "bonus": "19x multiplier"
+        }
+    ],
     "brainrots": [
         {
             "name": "Fishini Bossini",
@@ -1756,6 +1908,165 @@
             "price": 1000000000000,
             "produces": 350000000,
             "asset": "skibidi-toilet"
+        }
+    ],
+    "types": [
+        {
+            "name": "Default",
+            "color": "#e4e6eb",
+            "multiplier": 1
+        },
+        {
+            "name": "Gold",
+            "color": "#fbbf24",
+            "multiplier": 1.25
+        },
+        {
+            "name": "Diamond",
+            "color": "#7dd3fc",
+            "multiplier": 1.5
+        },
+        {
+            "name": "Galaxy",
+            "color": "#818cf8",
+            "multiplier": 3
+        },
+        {
+            "name": "Zombie",
+            "color": "#4ade80",
+            "multiplier": 5
+        },
+        {
+            "name": "Dreamy",
+            "color": "#f472b6",
+            "multiplier": 6
+        },
+        {
+            "name": "Ice \u0026 Fire",
+            "color": "#f59e0b",
+            "multiplier": 7
+        },
+        {
+            "name": "Carnival",
+            "color": "#86efac",
+            "multiplier": 8
+        },
+        {
+            "name": "Aqua",
+            "color": "#22d3ee",
+            "multiplier": 9
+        },
+        {
+            "name": "Neon",
+            "color": "#00ff9f",
+            "multiplier": 9.5
+        },
+        {
+            "name": "Rainbow",
+            "color": "#e879f9",
+            "multiplier": 10
+        },
+        {
+            "name": "Halloween",
+            "color": "#f97316",
+            "multiplier": 10
+        },
+        {
+            "name": "Chocolate",
+            "color": "#cd7f32",
+            "multiplier": 10.5
+        },
+        {
+            "name": "Lovely",
+            "color": "#fb7185",
+            "multiplier": 10.5
+        },
+        {
+            "name": "Darkness",
+            "color": "#991b1b",
+            "multiplier": 11
+        },
+        {
+            "name": "Toxic",
+            "color": "#a3e635",
+            "multiplier": 11
+        },
+        {
+            "name": "Christmas",
+            "color": "#ef4444",
+            "multiplier": 12
+        },
+        {
+            "name": "Heaven",
+            "color": "#fde68a",
+            "multiplier": 12.5
+        },
+        {
+            "name": "Void",
+            "color": "#8b5cf6",
+            "multiplier": 13
+        },
+        {
+            "name": "Crystal",
+            "color": "#60a5fa",
+            "multiplier": 13
+        }
+    ],
+    "traits": [
+        {
+            "name": "Default",
+            "color": "#a8adb7",
+            "multiplier": 0
+        },
+        {
+            "name": "Lightning",
+            "color": "#fbbf24",
+            "multiplier": 1.5
+        },
+        {
+            "name": "Frozen",
+            "color": "#7dd3fc",
+            "multiplier": 2
+        },
+        {
+            "name": "Fireworks",
+            "color": "#f97316",
+            "multiplier": 2
+        },
+        {
+            "name": "Cupid",
+            "color": "#f472b6",
+            "multiplier": 2.5
+        },
+        {
+            "name": "Wave",
+            "color": "#3b82f6",
+            "multiplier": 3
+        },
+        {
+            "name": "Glitch",
+            "color": "#a3e635",
+            "multiplier": 3
+        },
+        {
+            "name": "Tung",
+            "color": "#d97706",
+            "multiplier": 3
+        },
+        {
+            "name": "Carps",
+            "color": "#f87171",
+            "multiplier": 3
+        },
+        {
+            "name": "Pumpkin",
+            "color": "#ea580c",
+            "multiplier": 4
+        },
+        {
+            "name": "Skibidi",
+            "color": "#22d3ee",
+            "multiplier": 5
         }
     ]
 }

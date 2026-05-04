@@ -164,26 +164,15 @@ onMounted(async () => {
     return response.json();
   };
 
-  // All four data files are independent — fetch in parallel to cut total load time
-  // from ~4× round-trips down to ~1× on slow connections (e.g. 4G).
-  const [rebirths, brainrots, types, traits] = await Promise.allSettled([
-    fetchJson('/rebirths.json'),
-    fetchJson('/brainrots.json'),
-    fetchJson('/types.json'),
-    fetchJson('/traits.json'),
-  ]);
-
-  if (rebirths.status   === 'fulfilled') rebirthData.value   = rebirths.value.rebirths;
-  else console.error('Error loading rebirth data:', rebirths.reason);
-
-  if (brainrots.status === 'fulfilled') brainrotsData.value = brainrots.value.brainrots;
-  else console.error('Error loading brainrots data:', brainrots.reason);
-
-  if (types.status     === 'fulfilled') typesData.value     = types.value.types;
-  else console.error('Error loading types data:', types.reason);
-
-  if (traits.status    === 'fulfilled') traitsData.value    = traits.value.traits;
-  else console.error('Error loading traits data:', traits.reason);
+  try {
+    const data = await fetchJson('/data.json');
+    rebirthData.value = Array.isArray(data.rebirths) ? data.rebirths : [];
+    brainrotsData.value = Array.isArray(data.brainrots) ? data.brainrots : [];
+    typesData.value = Array.isArray(data.types) ? data.types : [];
+    traitsData.value = Array.isArray(data.traits) ? data.traits : [];
+  } catch (error) {
+    console.error('Error loading site data:', error);
+  }
 });
 </script>
 
