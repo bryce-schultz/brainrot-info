@@ -421,12 +421,12 @@ body {
 
 .brainrot-tag.rarity-common    { border-color: #00ff88; color: #00ff88; }
 .brainrot-tag.rarity-rare      { border-color: #4a9eff; color: #4a9eff; }
-.brainrot-tag.rarity-epic      { border-color: #a855f7; color: #a855f7; }
+.brainrot-tag.rarity-epic      { border-color: #c084fc; color: #d8b4fe; }
 .brainrot-tag.rarity-legendary { border-color: #fbbf24; color: #fbbf24; }
-.brainrot-tag.rarity-mythic    { border-color: #ef4444; color: #ef4444; }
+.brainrot-tag.rarity-mythic    { border-color: #f87171; color: #fca5a5; }
 .brainrot-tag.rarity-brainrotgod { border-color: #c084fc; color: #c084fc; }
 .brainrot-tag.rarity-secret    { border-color: #f3f4f6; color: #f3f4f6; }
-.brainrot-tag.rarity-eternal   { border-color: #991b1b; color: #cb2a2a; }
+.brainrot-tag.rarity-eternal   { border-color: #ef4444; color: #fecaca; }
 .brainrot-tag.rarity-goat      { border-color: #00d9ff; color: #00d9ff; }
 
 /* Content Placeholder */
