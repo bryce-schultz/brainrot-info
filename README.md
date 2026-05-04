@@ -38,3 +38,9 @@ npm run preview
 2. Drop it into `src/assets/`.
 
 Vite picks it up automatically via `import.meta.glob` — no code changes needed.
+
+---
+
+## Custom Artwork — Coming Soon
+
+Original artwork for the brainrots is being created by **Andres D.** and will be added to the site over time. Art will be released in batches covering a few brainrots at a time, so expect new illustrations to appear gradually.

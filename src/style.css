@@ -992,14 +992,18 @@ body {
     .brainrots-grid {
         grid-template-columns: 1fr;
     }
+}
 
+@media (max-width: 640px) {
     .brainrot-content {
         flex-direction: column;
     }
 
     .brainrot-image {
         width: 100%;
-        height: 150px;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        margin: 0 auto;
     }
 }
 
