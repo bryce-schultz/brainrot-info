@@ -1,0 +1,1761 @@
+{
+    "brainrots": [
+        {
+            "name": "Fishini Bossini",
+            "rarity": "Common",
+            "price": 25,
+            "produces": 1,
+            "asset": "fishini-bossini"
+        },
+        {
+            "name": "Lirili Larilla",
+            "rarity": "Common",
+            "price": 250,
+            "produces": 3,
+            "asset": "lirili-larilla"
+        },
+        {
+            "name": "Tim Cheese",
+            "rarity": "Common",
+            "price": 500,
+            "produces": 5,
+            "asset": "tim-cheese"
+        },
+        {
+            "name": "Fluriflura",
+            "rarity": "Common",
+            "price": 750,
+            "produces": 7,
+            "asset": "fluriflura"
+        },
+        {
+            "name": "Penguino Cocosino",
+            "rarity": "Common",
+            "price": 1000,
+            "produces": 9,
+            "asset": "penguino-cocosino"
+        },
+        {
+            "name": "Svinina Bombardino",
+            "rarity": "Common",
+            "price": 1250,
+            "produces": 10,
+            "asset": "svinina-bombardino"
+        },
+        {
+            "name": "Pipi Kiwi",
+            "rarity": "Common",
+            "price": 1500,
+            "produces": 13,
+            "asset": "pipi-kiwi"
+        },
+        {
+            "name": "Pipi Avocado",
+            "rarity": "Common",
+            "price": 1800,
+            "produces": 14,
+            "asset": "pipi-avocado"
+        },
+        {
+            "name": "Trippi Troppi",
+            "rarity": "Rare",
+            "price": 2000,
+            "produces": 15,
+            "asset": "trippi-troppi"
+        },
+        {
+            "name": "Tung Tung Tung Sahur",
+            "rarity": "Rare",
+            "price": 3000,
+            "produces": 25,
+            "asset": "tung-tung-tung-sahur"
+        },
+        {
+            "name": "Gangster Footera",
+            "rarity": "Rare",
+            "price": 4000,
+            "produces": 30,
+            "asset": "gangster-footera"
+        },
+        {
+            "name": "Boneca Ambalabu",
+            "rarity": "Rare",
+            "price": 5000,
+            "produces": 40,
+            "asset": "boneca-ambalabu"
+        },
+        {
+            "name": "Pipi Corni",
+            "rarity": "Rare",
+            "price": 6000,
+            "produces": 50,
+            "asset": "pipi-corni"
+        },
+        {
+            "name": "Ta Ta Ta Ta Sahur",
+            "rarity": "Rare",
+            "price": 7500,
+            "produces": 55,
+            "asset": "ta-ta-ta-ta-sahur"
+        },
+        {
+            "name": "Burballoni Watermeloni",
+            "rarity": "Rare",
+            "price": 8000,
+            "produces": 60,
+            "asset": "burballoni-watermeloni"
+        },
+        {
+            "name": "Pipi Potato",
+            "rarity": "Rare",
+            "price": 9000,
+            "produces": 70,
+            "asset": "pipi-potato"
+        },
+        {
+            "name": "Cappuccino Assassino",
+            "rarity": "Epic",
+            "price": 10000,
+            "produces": 75,
+            "asset": "cappuccino-assassino"
+        },
+        {
+            "name": "Brr Brr Patapim",
+            "rarity": "Epic",
+            "price": 15000,
+            "produces": 100,
+            "asset": "brr-brr-patapim"
+        },
+        {
+            "name": "Trulimero Trulicina",
+            "rarity": "Epic",
+            "price": 20000,
+            "produces": 120,
+            "asset": "trulimero-trulicina"
+        },
+        {
+            "name": "Bananita Dolphinita",
+            "rarity": "Epic",
+            "price": 25000,
+            "produces": 150,
+            "asset": "bananita-dolphinita"
+        },
+        {
+            "name": "Los Lirilitos",
+            "rarity": "Epic",
+            "price": 40000,
+            "produces": 200,
+            "asset": "los-lirilitos"
+        },
+        {
+            "name": "Salamino Pinguino",
+            "rarity": "Epic",
+            "price": 50000,
+            "produces": 250,
+            "asset": "salamino-pinguino"
+        },
+        {
+            "name": "Tric Trac Baraboom",
+            "rarity": "Epic",
+            "price": 55000,
+            "produces": 275,
+            "asset": "tric-trac-baraboom"
+        },
+        {
+            "name": "Los Tung TungCitos",
+            "rarity": "Epic",
+            "price": 60000,
+            "produces": 300,
+            "asset": "los-tung-tungcitos"
+        },
+        {
+            "name": "Tukanno Bananno",
+            "rarity": "Epic",
+            "price": 65000,
+            "produces": 325,
+            "asset": "tukanno-bananno"
+        },
+        {
+            "name": "Blueberrinni Octopussini",
+            "rarity": "Epic",
+            "price": 70000,
+            "produces": 350,
+            "asset": "blueberrinni-octopussini"
+        },
+        {
+            "name": "Spijuniro Golubiro",
+            "rarity": "Epic",
+            "price": 75000,
+            "produces": 400,
+            "asset": "spijuniro-golubiro"
+        },
+        {
+            "name": "Penguini Zucchini",
+            "rarity": "Epic",
+            "price": 80000,
+            "produces": 425,
+            "asset": "penguini-zucchini"
+        },
+        {
+            "name": "Blueberrini Tatticini",
+            "rarity": "Epic",
+            "price": 85000,
+            "produces": 450,
+            "asset": "blueberrini-tatticini"
+        },
+        {
+            "name": "Gingobalo Gingobali",
+            "rarity": "Epic",
+            "price": 110000,
+            "produces": 500,
+            "asset": "gingobalo-gingobali"
+        },
+        {
+            "name": "Burbalona Loliloli",
+            "rarity": "Legendary",
+            "price": 35000,
+            "produces": 200,
+            "asset": "burbalona-loliloli"
+        },
+        {
+            "name": "Chimpanzini Bananini",
+            "rarity": "Legendary",
+            "price": 50000,
+            "produces": 300,
+            "asset": "chimpanzini-bananini"
+        },
+        {
+            "name": "Ballerina Cappuccina",
+            "rarity": "Legendary",
+            "price": 100000,
+            "produces": 500,
+            "asset": "ballerina-cappuccina"
+        },
+        {
+            "name": "Chef Crabracadabra",
+            "rarity": "Legendary",
+            "price": 150000,
+            "produces": 600,
+            "asset": "chef-crabracadabra"
+        },
+        {
+            "name": "Glorbo Fruttodillo",
+            "rarity": "Legendary",
+            "price": 200000,
+            "produces": 750,
+            "asset": "glorbo-fruttodillo"
+        },
+        {
+            "name": "Cacto Hipopotamo",
+            "rarity": "Legendary",
+            "price": 225000,
+            "produces": 900,
+            "asset": "cacto-hipopotamo"
+        },
+        {
+            "name": "Ballerino Lololo",
+            "rarity": "Legendary",
+            "price": 250000,
+            "produces": 1000,
+            "asset": "ballerino-lololo"
+        },
+        {
+            "name": "Lerulerulerule",
+            "rarity": "Legendary",
+            "price": 300000,
+            "produces": 1200,
+            "asset": "lerulerulerule"
+        },
+        {
+            "name": "Bambini Crostini",
+            "rarity": "Legendary",
+            "price": 350000,
+            "produces": 1500,
+            "asset": "bambini-crostini"
+        },
+        {
+            "name": "Francescoo",
+            "rarity": "Legendary",
+            "price": 400000,
+            "produces": 1700,
+            "asset": "francescoo"
+        },
+        {
+            "name": "Zibra Zubra Zibralini",
+            "rarity": "Legendary",
+            "price": 500000,
+            "produces": 2000,
+            "asset": "zibra-zubra-zibralini"
+        },
+        {
+            "name": "Bambu di Miale",
+            "rarity": "Legendary",
+            "price": 550000,
+            "produces": 2200,
+            "asset": "bambu-di-miale"
+        },
+        {
+            "name": "Mangolini Parrocini",
+            "rarity": "Legendary",
+            "price": 600000,
+            "produces": 2500,
+            "asset": "mangolini-parrocini"
+        },
+        {
+            "name": "Lampu Lampu Sahur",
+            "rarity": "Legendary",
+            "price": 610000,
+            "produces": 2600,
+            "asset": "lampu-lampu-sahur"
+        },
+        {
+            "name": "Octopuss Coconuss",
+            "rarity": "Legendary",
+            "price": 625000,
+            "produces": 2700,
+            "asset": "octopuss-coconuss"
+        },
+        {
+            "name": "Leonelli Cactuselli",
+            "rarity": "Legendary",
+            "price": 650000,
+            "produces": 3000,
+            "asset": "leonelli-cactuselli"
+        },
+        {
+            "name": "Elefantucci Bananucci",
+            "rarity": "Legendary",
+            "price": 700000,
+            "produces": 3500,
+            "asset": "elefantucci-bananucci"
+        },
+        {
+            "name": "Avocadini Antilopini",
+            "rarity": "Legendary",
+            "price": 850000,
+            "produces": 4000,
+            "asset": "avocadini-antilopini"
+        },
+        {
+            "name": "Dragonini Ananasini",
+            "rarity": "Legendary",
+            "price": 1000000,
+            "produces": 5000,
+            "asset": "dragonini-ananasini"
+        },
+        {
+            "name": "Frigo Camelo",
+            "rarity": "Mythic",
+            "price": 300000,
+            "produces": 1200,
+            "asset": "frigo-camelo"
+        },
+        {
+            "name": "Orangutini Ananassini",
+            "rarity": "Mythic",
+            "price": 400000,
+            "produces": 1700,
+            "asset": "orangutini-ananassini"
+        },
+        {
+            "name": "Bombardiro Crocodilo",
+            "rarity": "Mythic",
+            "price": 500000,
+            "produces": 2500,
+            "asset": "bombardiro-crocodilo"
+        },
+        {
+            "name": "Bombombini Gusini",
+            "rarity": "Mythic",
+            "price": 1000000,
+            "produces": 5000,
+            "asset": "bombombini-gusini"
+        },
+        {
+            "name": "Gorillo Watermellondrillo",
+            "rarity": "Mythic",
+            "price": 1500000,
+            "produces": 6250,
+            "asset": "gorillo-watermellondrillo"
+        },
+        {
+            "name": "Sigma Boy",
+            "rarity": "Mythic",
+            "price": 2000000,
+            "produces": 7000,
+            "asset": "sigma-boy"
+        },
+        {
+            "name": "Matteo",
+            "rarity": "Mythic",
+            "price": 2500000,
+            "produces": 7500,
+            "asset": "matteo"
+        },
+        {
+            "name": "Los Spijuniritos",
+            "rarity": "Mythic",
+            "price": 3000000,
+            "produces": 8000,
+            "asset": "los-spijuniritos"
+        },
+        {
+            "name": "Rhino Toasterino",
+            "rarity": "Mythic",
+            "price": 3300000,
+            "produces": 8500,
+            "asset": "rhino-toasterino"
+        },
+        {
+            "name": "Ganganzelli Trulala",
+            "rarity": "Mythic",
+            "price": 3500000,
+            "produces": 9000,
+            "asset": "ganganzelli-trulala"
+        },
+        {
+            "name": "Te Te Te Sahur",
+            "rarity": "Mythic",
+            "price": 4000000,
+            "produces": 9500,
+            "asset": "te-te-te-sahur"
+        },
+        {
+            "name": "Fireworkito Explodito",
+            "rarity": "Mythic",
+            "price": 4500000,
+            "produces": 10000,
+            "asset": "fireworkito-explodito"
+        },
+        {
+            "name": "Strawberrelli Flamingelli",
+            "rarity": "Mythic",
+            "price": 6000000,
+            "produces": 11000,
+            "asset": "strawberrelli-flamingelli"
+        },
+        {
+            "name": "Elefantino Frigorifero",
+            "rarity": "Mythic",
+            "price": 6500000,
+            "produces": 12000,
+            "asset": "elefantino-frigorifero"
+        },
+        {
+            "name": "To To To Sahur",
+            "rarity": "Mythic",
+            "price": 7000000,
+            "produces": 13000,
+            "asset": "to-to-to-sahur"
+        },
+        {
+            "name": "Elefante Cafettino",
+            "rarity": "Mythic",
+            "price": 7200000,
+            "produces": 13500,
+            "asset": "elefante-cafettino"
+        },
+        {
+            "name": "Antoniooo",
+            "rarity": "Mythic",
+            "price": 7500000,
+            "produces": 14000,
+            "asset": "antoniooo"
+        },
+        {
+            "name": "Kudanile Astronaute",
+            "rarity": "Mythic",
+            "price": 7800000,
+            "produces": 14500,
+            "asset": "kudanile-astronaute"
+        },
+        {
+            "name": "Girafa Celeste",
+            "rarity": "Mythic",
+            "price": 8000000,
+            "produces": 15000,
+            "asset": "girafa-celeste"
+        },
+        {
+            "name": "Mr Peppermint",
+            "rarity": "Mythic",
+            "price": 8300000,
+            "produces": 15500,
+            "asset": "mr-peppermint"
+        },
+        {
+            "name": "Perochello Lemonchello",
+            "rarity": "Mythic",
+            "price": 8500000,
+            "produces": 16000,
+            "asset": "perochello-lemonchello"
+        },
+        {
+            "name": "Tang Tang Kelentang",
+            "rarity": "Mythic",
+            "price": 9000000,
+            "produces": 17000,
+            "asset": "tang-tang-kelentang"
+        },
+        {
+            "name": "Avocadorilla",
+            "rarity": "Mythic",
+            "price": 9300000,
+            "produces": 18000,
+            "asset": "avocadorilla"
+        },
+        {
+            "name": "Patapimus Maximus",
+            "rarity": "Mythic",
+            "price": 9500000,
+            "produces": 19000,
+            "asset": "patapimus-maximus"
+        },
+        {
+            "name": "Tirilikalika Tirilikaliko",
+            "rarity": "Mythic",
+            "price": 10000000,
+            "produces": 20000,
+            "asset": "tirilikalika-tirilikaliko"
+        },
+        {
+            "name": "Santoniooo",
+            "rarity": "Mythic",
+            "price": 11000000,
+            "produces": 21000,
+            "asset": "santoniooo"
+        },
+        {
+            "name": "Los Matteos",
+            "rarity": "Mythic",
+            "price": 12000000,
+            "produces": 22500,
+            "asset": "los-matteos"
+        },
+        {
+            "name": "Los Sigma Boys",
+            "rarity": "Mythic",
+            "price": 12500000,
+            "produces": 23000,
+            "asset": "los-sigma-boys"
+        },
+        {
+            "name": "Eaglucci Cocosucci",
+            "rarity": "Mythic",
+            "price": 13000000,
+            "produces": 24000,
+            "asset": "eaglucci-cocosucci"
+        },
+        {
+            "name": "Ti Ti Ti Sahur",
+            "rarity": "Mythic",
+            "price": 13000000,
+            "produces": 25000,
+            "asset": "ti-ti-ti-sahur"
+        },
+        {
+            "name": "Fishinis Santinis",
+            "rarity": "Mythic",
+            "price": 15000000,
+            "produces": 27000,
+            "asset": "fishinis-santinis"
+        },
+        {
+            "name": "Cocofanto Elefanto",
+            "rarity": "BrainrotGod",
+            "price": 5000000,
+            "produces": 10000,
+            "asset": "cocofanto-elefanto"
+        },
+        {
+            "name": "Tob Tobi Tob",
+            "rarity": "BrainrotGod",
+            "price": 7500000,
+            "produces": 25000,
+            "asset": "tob-tobi-tob"
+        },
+        {
+            "name": "Tralalero Tralala",
+            "rarity": "BrainrotGod",
+            "price": 10000000,
+            "produces": 50000,
+            "asset": "tralalero-tralala"
+        },
+        {
+            "name": "Odin Din Din Dun",
+            "rarity": "BrainrotGod",
+            "price": 15000000,
+            "produces": 75000,
+            "asset": "odin-din-din-dun"
+        },
+        {
+            "name": "Akulini Cactusini",
+            "rarity": "BrainrotGod",
+            "price": 17000000,
+            "produces": 80000,
+            "asset": "akulini-cactusini"
+        },
+        {
+            "name": "Chachechicha",
+            "rarity": "BrainrotGod",
+            "price": 20000000,
+            "produces": 80000,
+            "asset": "chachechicha"
+        },
+        {
+            "name": "Espressona Signora",
+            "rarity": "BrainrotGod",
+            "price": 20000000,
+            "produces": 90000,
+            "asset": "espressona-signora"
+        },
+        {
+            "name": "La Vaca Saturno Saturnita",
+            "rarity": "BrainrotGod",
+            "price": 25000000,
+            "produces": 100000,
+            "asset": "la-vaca-saturno-saturnita"
+        },
+        {
+            "name": "Centralucci Nuclearucci",
+            "rarity": "BrainrotGod",
+            "price": 27000000,
+            "produces": 105000,
+            "asset": "centralucci-nuclearucci"
+        },
+        {
+            "name": "Ecco Cavallo Virtuoso",
+            "rarity": "BrainrotGod",
+            "price": 27000000,
+            "produces": 110000,
+            "asset": "ecco-cavallo-virtuoso"
+        },
+        {
+            "name": "Los Vaquitas Saturnitas",
+            "rarity": "BrainrotGod",
+            "price": 29000000,
+            "produces": 115000,
+            "asset": "los-vaquitas-saturnitas"
+        },
+        {
+            "name": "Bulbito Bandito Traktorito",
+            "rarity": "BrainrotGod",
+            "price": 30000000,
+            "produces": 120000,
+            "asset": "bulbito-bandito-traktorito"
+        },
+        {
+            "name": "Bananananito Bandito",
+            "rarity": "BrainrotGod",
+            "price": 32000000,
+            "produces": 125000,
+            "asset": "bananananito-bandito"
+        },
+        {
+            "name": "Chillin Chili",
+            "rarity": "BrainrotGod",
+            "price": 33000000,
+            "produces": 130000,
+            "asset": "chillin-chili"
+        },
+        {
+            "name": "Trippi Troppi Troppa Trippa",
+            "rarity": "BrainrotGod",
+            "price": 35000000,
+            "produces": 130000,
+            "asset": "trippi-troppi-troppa-trippa"
+        },
+        {
+            "name": "Brri Bicus Dicus",
+            "rarity": "BrainrotGod",
+            "price": 35000000,
+            "produces": 135000,
+            "asset": "brri-bicus-dicus"
+        },
+        {
+            "name": "Cioccolatini Pancioncioni",
+            "rarity": "BrainrotGod",
+            "price": 36000000,
+            "produces": 140000,
+            "asset": "cioccolatini-pancioncioni"
+        },
+        {
+            "name": "Brr Es Teh Patipum",
+            "rarity": "BrainrotGod",
+            "price": 38000000,
+            "produces": 145000,
+            "asset": "brr-es-teh-patipum"
+        },
+        {
+            "name": "Torrtuginni Dragonfrutinni",
+            "rarity": "BrainrotGod",
+            "price": 40000000,
+            "produces": 150000,
+            "asset": "torrtuginni-dragonfrutinni"
+        },
+        {
+            "name": "Los Bros",
+            "rarity": "BrainrotGod",
+            "price": 43000000,
+            "produces": 155000,
+            "asset": "los-bros"
+        },
+        {
+            "name": "Bim Bim Bim Sadim",
+            "rarity": "BrainrotGod",
+            "price": 44000000,
+            "produces": 157000,
+            "asset": "bim-bim-bim-sadim"
+        },
+        {
+            "name": "Bambini Tankini",
+            "rarity": "BrainrotGod",
+            "price": 45000000,
+            "produces": 160000,
+            "asset": "bambini-tankini"
+        },
+        {
+            "name": "Jiqi Jiqi Shizhon",
+            "rarity": "BrainrotGod",
+            "price": 47000000,
+            "produces": 165000,
+            "asset": "jiqi-jiqi-shizhon"
+        },
+        {
+            "name": "Hotti Coccolli",
+            "rarity": "BrainrotGod",
+            "price": 48000000,
+            "produces": 167000,
+            "asset": "hotti-coccolli"
+        },
+        {
+            "name": "Los Crocodillitos",
+            "rarity": "BrainrotGod",
+            "price": 50000000,
+            "produces": 170000,
+            "asset": "los-crocodillitos"
+        },
+        {
+            "name": "Agarrini La Palini",
+            "rarity": "BrainrotGod",
+            "price": 55000000,
+            "produces": 175000,
+            "asset": "agarrini-la-palini"
+        },
+        {
+            "name": "Alessiooooooo",
+            "rarity": "BrainrotGod",
+            "price": 60000000,
+            "produces": 180000,
+            "asset": "alessiooooooo"
+        },
+        {
+            "name": "Dig Torto Dolf",
+            "rarity": "BrainrotGod",
+            "price": 63000000,
+            "produces": 185000,
+            "asset": "dig-torto-dolf"
+        },
+        {
+            "name": "Karkerkar Kurkur",
+            "rarity": "BrainrotGod",
+            "price": 65000000,
+            "produces": 190000,
+            "asset": "karkerkar-kurkur"
+        },
+        {
+            "name": "Il Costruttore Di Pomodori",
+            "rarity": "BrainrotGod",
+            "price": 68000000,
+            "produces": 195000,
+            "asset": "il-costruttore-di-pomodori"
+        },
+        {
+            "name": "Piccionetta Machina",
+            "rarity": "BrainrotGod",
+            "price": 70000000,
+            "produces": 200000,
+            "asset": "piccionetta-machina"
+        },
+        {
+            "name": "Pipoqueira Motoqueira",
+            "rarity": "BrainrotGod",
+            "price": 73000000,
+            "produces": 205000,
+            "asset": "pipoqueira-motoqueira"
+        },
+        {
+            "name": "Il Piccione Musculone",
+            "rarity": "BrainrotGod",
+            "price": 75000000,
+            "produces": 210000,
+            "asset": "il-piccione-musculone"
+        },
+        {
+            "name": "Nooo My Present",
+            "rarity": "BrainrotGod",
+            "price": 77000000,
+            "produces": 215000,
+            "asset": "nooo-my-present"
+        },
+        {
+            "name": "Job Job Job Sahur",
+            "rarity": "BrainrotGod",
+            "price": 80000000,
+            "produces": 220000,
+            "asset": "job-job-job-sahur"
+        },
+        {
+            "name": "Las Sis",
+            "rarity": "BrainrotGod",
+            "price": 85000000,
+            "produces": 230000,
+            "asset": "las-sis"
+        },
+        {
+            "name": "La Matcha Assassino",
+            "rarity": "BrainrotGod",
+            "price": 87000000,
+            "produces": 235000,
+            "asset": "la-matcha-assassino"
+        },
+        {
+            "name": "Il Mastodontico Telepiedone",
+            "rarity": "BrainrotGod",
+            "price": 90000000,
+            "produces": 240000,
+            "asset": "il-mastodontico-telepiedone"
+        },
+        {
+            "name": "Los Christmas bros",
+            "rarity": "BrainrotGod",
+            "price": 93000000,
+            "produces": 245000,
+            "asset": "los-christmas-bros"
+        },
+        {
+            "name": "Malame Amarale",
+            "rarity": "BrainrotGod",
+            "price": 100000000,
+            "produces": 250000,
+            "asset": "malame-amarale"
+        },
+        {
+            "name": "Il Bisonte Giuppitere",
+            "rarity": "BrainrotGod",
+            "price": 105000000,
+            "produces": 255000,
+            "asset": "il-bisonte-giuppitere"
+        },
+        {
+            "name": "Linguicine Serpentine",
+            "rarity": "BrainrotGod",
+            "price": 110000000,
+            "produces": 260000,
+            "asset": "linguicine-serpentine"
+        },
+        {
+            "name": "Belugelo Beluga",
+            "rarity": "BrainrotGod",
+            "price": 120000000,
+            "produces": 270000,
+            "asset": "belugelo-beluga"
+        },
+        {
+            "name": "Bella PanCasita",
+            "rarity": "BrainrotGod",
+            "price": 130000000,
+            "produces": 275000,
+            "asset": "bella-pancasita"
+        },
+        {
+            "name": "Rhino Helicopterino",
+            "rarity": "BrainrotGod",
+            "price": 145000000,
+            "produces": 290000,
+            "asset": "rhino-helicopterino"
+        },
+        {
+            "name": "Missilpython Turbozzo",
+            "rarity": "BrainrotGod",
+            "price": 150000000,
+            "produces": 300000,
+            "asset": "missilpython-turbozzo"
+        },
+        {
+            "name": "Auglurini Arbuzini",
+            "rarity": "BrainrotGod",
+            "price": 200000000,
+            "produces": 350000,
+            "asset": "auglurini-arbuzini"
+        },
+        {
+            "name": "Los Tralaleritos",
+            "rarity": "Secret",
+            "price": 60000000,
+            "produces": 200000,
+            "asset": "los-tralaleritos"
+        },
+        {
+            "name": "Los Tralaleritas",
+            "rarity": "Secret",
+            "price": 60000000,
+            "produces": 200000,
+            "asset": "los-tralaleritas"
+        },
+        {
+            "name": "Trenostruzzo Turbo 3000",
+            "rarity": "Secret",
+            "price": 70000000,
+            "produces": 300000,
+            "asset": "trenostruzzo-turbo-3000"
+        },
+        {
+            "name": "Kravilino Cekicino",
+            "rarity": "Secret",
+            "price": 90000000,
+            "produces": 375000,
+            "asset": "kravilino-cekicino"
+        },
+        {
+            "name": "Los Orcaleritos",
+            "rarity": "Secret",
+            "price": 100000000,
+            "produces": 400000,
+            "asset": "los-orcaleritos"
+        },
+        {
+            "name": "Los Couples",
+            "rarity": "Secret",
+            "price": 150000000,
+            "produces": 450000,
+            "asset": "los-couples"
+        },
+        {
+            "name": "Las Agarrinis",
+            "rarity": "Secret",
+            "price": 160000000,
+            "produces": 470000,
+            "asset": "las-agarrinis"
+        },
+        {
+            "name": "Piccione Macchina",
+            "rarity": "Secret",
+            "price": 125000000,
+            "produces": 500000,
+            "asset": "piccione-macchina"
+        },
+        {
+            "name": "Peeling Peely",
+            "rarity": "Secret",
+            "price": 225000000,
+            "produces": 500000,
+            "asset": "peeling-peely"
+        },
+        {
+            "name": "Pakrahmatmamatcita",
+            "rarity": "Secret",
+            "price": 150000000,
+            "produces": 550000,
+            "asset": "pakrahmatmamatcita"
+        },
+        {
+            "name": "Pakrahmatmamat",
+            "rarity": "Secret",
+            "price": 300000000,
+            "produces": 600000,
+            "asset": "pakrahmatmamat"
+        },
+        {
+            "name": "Los Job Jobsitos",
+            "rarity": "Secret",
+            "price": 150000000,
+            "produces": 700000,
+            "asset": "los-job-jobsitos"
+        },
+        {
+            "name": "Anpali Babel",
+            "rarity": "Secret",
+            "price": 350000000,
+            "produces": 800000,
+            "asset": "anpali-babel"
+        },
+        {
+            "name": "Los Karkeritos",
+            "rarity": "Secret",
+            "price": 325000000,
+            "produces": 900000,
+            "asset": "los-karkeritos"
+        },
+        {
+            "name": "Orcalero Orcala",
+            "rarity": "Secret",
+            "price": 200000000,
+            "produces": 1000000,
+            "asset": "orcalero-orcala"
+        },
+        {
+            "name": "Frogino Assassino",
+            "rarity": "Secret",
+            "price": 275000000,
+            "produces": 1200000,
+            "asset": "frogino-assassino"
+        },
+        {
+            "name": "Pickolini Malakini",
+            "rarity": "Secret",
+            "price": 240000000,
+            "produces": 1400000,
+            "asset": "pickolini-malakini"
+        },
+        {
+            "name": "14",
+            "rarity": "Secret",
+            "price": 1400000000,
+            "produces": 1400000,
+            "asset": "14"
+        },
+        {
+            "name": "Ketchuru and Musturu",
+            "rarity": "Secret",
+            "price": 250000000,
+            "produces": 1500000,
+            "asset": "ketchuru-and-musturu"
+        },
+        {
+            "name": "TrenoStruzzo Turbo 4000",
+            "rarity": "Secret",
+            "price": 140000000,
+            "produces": 1700000,
+            "asset": "trenostruzzo-turbo-4000"
+        },
+        {
+            "name": "Pot Hotspotina",
+            "rarity": "Secret",
+            "price": 550000000,
+            "produces": 1750000,
+            "asset": "pot-hotspotina"
+        },
+        {
+            "name": "Pot Hotspot",
+            "rarity": "Secret",
+            "price": 400000000,
+            "produces": 2000000,
+            "asset": "pot-hotspot"
+        },
+        {
+            "name": "21",
+            "rarity": "Secret",
+            "price": 2100000000,
+            "produces": 2100000,
+            "asset": "21"
+        },
+        {
+            "name": "Los Mobilis",
+            "rarity": "Secret",
+            "price": 425000000,
+            "produces": 2200000,
+            "asset": "los-mobilis"
+        },
+        {
+            "name": "Nooo My Hotspot",
+            "rarity": "Secret",
+            "price": 450000000,
+            "produces": 2500000,
+            "asset": "nooo-my-hotspot"
+        },
+        {
+            "name": "Elf Elf Elf",
+            "rarity": "Secret",
+            "price": 700000000,
+            "produces": 2700000,
+            "asset": "elf-elf-elf"
+        },
+        {
+            "name": "Frogatto Piratto",
+            "rarity": "Secret",
+            "price": 650000000,
+            "produces": 2800000,
+            "asset": "frogatto-piratto"
+        },
+        {
+            "name": "Garamaramadungdung",
+            "rarity": "Secret",
+            "price": 500000000,
+            "produces": 3000000,
+            "asset": "garamaramadungdung"
+        },
+        {
+            "name": "Papero Aspiratorino",
+            "rarity": "Secret",
+            "price": 570000000,
+            "produces": 3200000,
+            "asset": "papero-aspiratorino"
+        },
+        {
+            "name": "Bun Din Din Dun",
+            "rarity": "Secret",
+            "price": 600000000,
+            "produces": 3400000,
+            "asset": "bun-din-din-dun"
+        },
+        {
+            "name": "Pirulitoita Bicicleteira",
+            "rarity": "Secret",
+            "price": 600000000,
+            "produces": 3500000,
+            "asset": "pirulitoita-bicicleteira"
+        },
+        {
+            "name": "Chachechi Sahur",
+            "rarity": "Secret",
+            "price": 750000000,
+            "produces": 3700000,
+            "asset": "chachechi-sahur"
+        },
+        {
+            "name": "Il Sacro Cabrospaghetti",
+            "rarity": "Secret",
+            "price": 800000000,
+            "produces": 4000000,
+            "asset": "il-sacro-cabrospaghetti"
+        },
+        {
+            "name": "Tatoruman",
+            "rarity": "Secret",
+            "price": 850000000,
+            "produces": 4200000,
+            "asset": "tatoruman"
+        },
+        {
+            "name": "Fragola La La La",
+            "rarity": "Secret",
+            "price": 1000000000,
+            "produces": 4200000,
+            "asset": "fragola-la-la-la"
+        },
+        {
+            "name": "Chicleteirina Bicicleteirina",
+            "rarity": "Secret",
+            "price": 900000000,
+            "produces": 4500000,
+            "asset": "chicleteirina-bicicleteirina"
+        },
+        {
+            "name": "Owlito Tactito",
+            "rarity": "Secret",
+            "price": 930000000,
+            "produces": 4700000,
+            "asset": "owlito-tactito"
+        },
+        {
+            "name": "La Grande Combinacion",
+            "rarity": "Secret",
+            "price": 1000000000,
+            "produces": 5000000,
+            "asset": "la-grande-combinacion"
+        },
+        {
+            "name": "Rosalero",
+            "rarity": "Secret",
+            "price": 1100000000,
+            "produces": 5200000,
+            "asset": "rosalero"
+        },
+        {
+            "name": "Los SantaCitos",
+            "rarity": "Secret",
+            "price": 1300000000,
+            "produces": 5500000,
+            "asset": "los-santacitos"
+        },
+        {
+            "name": "Yess My Hotspot",
+            "rarity": "Secret",
+            "price": 1200000000,
+            "produces": 5500000,
+            "asset": "yess-my-hotspot"
+        },
+        {
+            "name": "Clove Clove Clove Sahur",
+            "rarity": "Secret",
+            "price": 1300000000,
+            "produces": 5700000,
+            "asset": "clove-clove-clove-sahur"
+        },
+        {
+            "name": "Le Golem De Frigider",
+            "rarity": "Secret",
+            "price": 1300000000,
+            "produces": 6000000,
+            "asset": "le-golem-de-frigider"
+        },
+        {
+            "name": "Paquito El Taquito",
+            "rarity": "Secret",
+            "price": 1300000000,
+            "produces": 6200000,
+            "asset": "paquito-el-taquito"
+        },
+        {
+            "name": "Cornball Sahur",
+            "rarity": "Secret",
+            "price": 1400000000,
+            "produces": 6500000,
+            "asset": "cornball-sahur"
+        },
+        {
+            "name": "Nuclearo Dinossauro",
+            "rarity": "Secret",
+            "price": 1500000000,
+            "produces": 6600000,
+            "asset": "nuclearo-dinossauro"
+        },
+        {
+            "name": "67",
+            "rarity": "Secret",
+            "price": 6700000000,
+            "produces": 6700000,
+            "asset": "67"
+        },
+        {
+            "name": "Los Esok Sekolitos",
+            "rarity": "Secret",
+            "price": 1500000000,
+            "produces": 7000000,
+            "asset": "los-esok-sekolitos"
+        },
+        {
+            "name": "Noo My Eggs",
+            "rarity": "Secret",
+            "price": 1600000000,
+            "produces": 7200000,
+            "asset": "noo-my-eggs"
+        },
+        {
+            "name": "Roobinha Acerolinha",
+            "rarity": "Secret",
+            "price": 1700000000,
+            "produces": 7300000,
+            "asset": "roobinha-acerolinha"
+        },
+        {
+            "name": "Coccoblade",
+            "rarity": "Secret",
+            "price": 1800000000,
+            "produces": 7500000,
+            "asset": "coccoblade"
+        },
+        {
+            "name": "Chicleteira Bicicleteira",
+            "rarity": "Secret",
+            "price": 2000000000,
+            "produces": 8000000,
+            "asset": "chicleteira-bicicleteira"
+        },
+        {
+            "name": "Chop Chop Chop Sahur",
+            "rarity": "Secret",
+            "price": 2200000000,
+            "produces": 8300000,
+            "asset": "chop-chop-chop-sahur"
+        },
+        {
+            "name": "Cacasito Satelito",
+            "rarity": "Secret",
+            "price": 4000000000,
+            "produces": 8500000,
+            "asset": "cacasito-satelito"
+        },
+        {
+            "name": "Dilly Pickle",
+            "rarity": "Secret",
+            "price": 2400000000,
+            "produces": 8700000,
+            "asset": "dilly-pickle"
+        },
+        {
+            "name": "La Christmas Combinacion",
+            "rarity": "Secret",
+            "price": 2500000000,
+            "produces": 9000000,
+            "asset": "la-christmas-combinacion"
+        },
+        {
+            "name": "Crocodila Bicicleteira",
+            "rarity": "Secret",
+            "price": 4500000000,
+            "produces": 9000000,
+            "asset": "crocodila-bicicleteira"
+        },
+        {
+            "name": "Pingus Kingus",
+            "rarity": "Secret",
+            "price": 4200000000,
+            "produces": 9500000,
+            "asset": "pingus-kingus"
+        },
+        {
+            "name": "Ketupat Kepat Prekupat",
+            "rarity": "Secret",
+            "price": 3000000000,
+            "produces": 10000000,
+            "asset": "ketupat-kepat-prekupat"
+        },
+        {
+            "name": "Koinobori Shogunelli",
+            "rarity": "Secret",
+            "price": 4000000000,
+            "produces": 10000000,
+            "asset": "koinobori-shogunelli"
+        },
+        {
+            "name": "Lovey Lovey Bear",
+            "rarity": "Secret",
+            "price": 4300000000,
+            "produces": 10500000,
+            "asset": "lovey-lovey-bear"
+        },
+        {
+            "name": "Coccobladina",
+            "rarity": "Secret",
+            "price": 4500000000,
+            "produces": 11000000,
+            "asset": "coccobladina"
+        },
+        {
+            "name": "Catino Timeno",
+            "rarity": "Secret",
+            "price": 4500000000,
+            "produces": 11500000,
+            "asset": "catino-timeno"
+        },
+        {
+            "name": "Carrot Carrot Sahur",
+            "rarity": "Secret",
+            "price": 4700000000,
+            "produces": 11700000,
+            "asset": "carrot-carrot-sahur"
+        },
+        {
+            "name": "Dul Dul Dul",
+            "rarity": "Secret",
+            "price": 5000000000,
+            "produces": 12000000,
+            "asset": "dul-dul-dul"
+        },
+        {
+            "name": "Rang Reng Kelerang",
+            "rarity": "Secret",
+            "price": 15500000000,
+            "produces": 12500000,
+            "asset": "rang-reng-kelerang"
+        },
+        {
+            "name": "W or L",
+            "rarity": "Secret",
+            "price": 5500000000,
+            "produces": 13000000,
+            "asset": "w-or-l"
+        },
+        {
+            "name": "Nooo My Bicicleteira",
+            "rarity": "Secret",
+            "price": 6000000000,
+            "produces": 13500000,
+            "asset": "nooo-my-bicicleteira"
+        },
+        {
+            "name": "Cookipat",
+            "rarity": "Secret",
+            "price": 6000000000,
+            "produces": 14000000,
+            "asset": "cookipat"
+        },
+        {
+            "name": "Scarletbyte",
+            "rarity": "Secret",
+            "price": 6000000000,
+            "produces": 14000000,
+            "asset": "scarletbyte"
+        },
+        {
+            "name": "Cobracadabra",
+            "rarity": "Secret",
+            "price": 6300000000,
+            "produces": 14200000,
+            "asset": "cobracadabra"
+        },
+        {
+            "name": "Trifoglita Bicicleta",
+            "rarity": "Secret",
+            "price": 6500000000,
+            "produces": 14500000,
+            "asset": "trifoglita-bicicleta"
+        },
+        {
+            "name": "Krr Krr Kataking",
+            "rarity": "Secret",
+            "price": 6500000000,
+            "produces": 14500000,
+            "asset": "krr-krr-kataking"
+        },
+        {
+            "name": "Los Garamadungcitos",
+            "rarity": "Secret",
+            "price": 7000000000,
+            "produces": 15000000,
+            "asset": "los-garamadungcitos"
+        },
+        {
+            "name": "Aquanaut",
+            "rarity": "Secret",
+            "price": 6500000000,
+            "produces": 16000000,
+            "asset": "aquanaut"
+        },
+        {
+            "name": "Lirili Ralilu",
+            "rarity": "Secret",
+            "price": 8000000000,
+            "produces": 17000000,
+            "asset": "lirili-ralilu"
+        },
+        {
+            "name": "Re Delle Carte",
+            "rarity": "Secret",
+            "price": 8200000000,
+            "produces": 17500000,
+            "asset": "re-delle-carte"
+        },
+        {
+            "name": "Lovelypat",
+            "rarity": "Secret",
+            "price": 8300000000,
+            "produces": 18000000,
+            "asset": "lovelypat"
+        },
+        {
+            "name": "McPenne Dougal",
+            "rarity": "Secret",
+            "price": 9000000000,
+            "produces": 19000000,
+            "asset": "mcpenne-dougal"
+        },
+        {
+            "name": "Tung Ballerina Sahur",
+            "rarity": "Secret",
+            "price": 10000000000,
+            "produces": 19000000,
+            "asset": "tung-ballerina-sahur"
+        },
+        {
+            "name": "La Esok Sekolah",
+            "rarity": "Secret",
+            "price": 50000000000,
+            "produces": 20000000,
+            "asset": "la-esok-sekolah"
+        },
+        {
+            "name": "Jisaoba Dashi",
+            "rarity": "Secret",
+            "price": 9700000000,
+            "produces": 21000000,
+            "asset": "jisaoba-dashi"
+        },
+        {
+            "name": "Baskuru and Egguru",
+            "rarity": "Secret",
+            "price": 9900000000,
+            "produces": 21500000,
+            "asset": "baskuru-and-egguru"
+        },
+        {
+            "name": "Pitiata Baem",
+            "rarity": "Secret",
+            "price": 10000000000,
+            "produces": 22000000,
+            "asset": "pitiata-baem"
+        },
+        {
+            "name": "Los 67",
+            "rarity": "Secret",
+            "price": 10000000000,
+            "produces": 22500000,
+            "asset": "los-67"
+        },
+        {
+            "name": "Bau Wang Wolf Monarca",
+            "rarity": "Secret",
+            "price": 10500000000,
+            "produces": 23000000,
+            "asset": "bau-wang-wolf-monarca"
+        },
+        {
+            "name": "Tralalero Kingala",
+            "rarity": "Secret",
+            "price": 11000000000,
+            "produces": 23500000,
+            "asset": "tralalero-kingala"
+        },
+        {
+            "name": "Chimpanzini Kingini",
+            "rarity": "Secret",
+            "price": 10000000000,
+            "produces": 25000000,
+            "asset": "chimpanzini-kingini"
+        },
+        {
+            "name": "25",
+            "rarity": "Secret",
+            "price": 11000000000,
+            "produces": 25000000,
+            "asset": "25"
+        },
+        {
+            "name": "Penguini Armorini Kingini",
+            "rarity": "Secret",
+            "price": 11500000000,
+            "produces": 26000000,
+            "asset": "penguini-armorini-kingini"
+        },
+        {
+            "name": "Yule Yule Il Reino",
+            "rarity": "Secret",
+            "price": 12000000000,
+            "produces": 27000000,
+            "asset": "yule-yule-il-reino"
+        },
+        {
+            "name": "Chilyeie y Avocadoa",
+            "rarity": "Secret",
+            "price": 12500000000,
+            "produces": 28000000,
+            "asset": "chilyeie-y-avocadoa"
+        },
+        {
+            "name": "Strawberry Elephant",
+            "rarity": "Secret",
+            "price": 13000000000,
+            "produces": 30000000,
+            "asset": "strawberry-elephant"
+        },
+        {
+            "name": "Klombo",
+            "rarity": "Secret",
+            "price": 20000000000,
+            "produces": 32000000,
+            "asset": "klombo"
+        },
+        {
+            "name": "Tictac Tictac Sahur",
+            "rarity": "Secret",
+            "price": 14000000000,
+            "produces": 33000000,
+            "asset": "tictac-tictac-sahur"
+        },
+        {
+            "name": "La Royals",
+            "rarity": "Secret",
+            "price": 14000000000,
+            "produces": 33000000,
+            "asset": "la-royals"
+        },
+        {
+            "name": "Shtekerito el Bulbonito",
+            "rarity": "Secret",
+            "price": 14000000000,
+            "produces": 35000000,
+            "asset": "shtekerito-el-bulbonito"
+        },
+        {
+            "name": "La Easter Eggolah",
+            "rarity": "Secret",
+            "price": 14000000000,
+            "produces": 35000000,
+            "asset": "la-easter-eggolah"
+        },
+        {
+            "name": "Tractoro Dinosauro",
+            "rarity": "Secret",
+            "price": 14500000000,
+            "produces": 36000000,
+            "asset": "tractoro-dinosauro"
+        },
+        {
+            "name": "Meccavallo",
+            "rarity": "Secret",
+            "price": 14500000000,
+            "produces": 37000000,
+            "asset": "meccavallo"
+        },
+        {
+            "name": "Capanna Distruttore",
+            "rarity": "Secret",
+            "price": 15000000000,
+            "produces": 38000000,
+            "asset": "capanna-distruttore"
+        },
+        {
+            "name": "Spaghetti Tualetti",
+            "rarity": "Secret",
+            "price": 15000000000,
+            "produces": 40000000,
+            "asset": "spaghetti-tualetti"
+        },
+        {
+            "name": "Los Chimpanzini Princinis",
+            "rarity": "Secret",
+            "price": 16000000000,
+            "produces": 41000000,
+            "asset": "los-chimpanzini-princinis"
+        },
+        {
+            "name": "Santatini el Treeetini",
+            "rarity": "Secret",
+            "price": 17000000000,
+            "produces": 42000000,
+            "asset": "santatini-el-treeetini"
+        },
+        {
+            "name": "Cabritos Brotheritos",
+            "rarity": "Secret",
+            "price": 20000000000,
+            "produces": 45000000,
+            "asset": "cabritos-brotheritos"
+        },
+        {
+            "name": "Cornzilla",
+            "rarity": "Secret",
+            "price": 21000000000,
+            "produces": 46000000,
+            "asset": "cornzilla"
+        },
+        {
+            "name": "Alligarto Alligarto",
+            "rarity": "Secret",
+            "price": 22000000000,
+            "produces": 47000000,
+            "asset": "alligarto-alligarto"
+        },
+        {
+            "name": "Cannelloni Dragoni",
+            "rarity": "Secret",
+            "price": 100000000000,
+            "produces": 50000000,
+            "asset": "cannelloni-dragoni"
+        },
+        {
+            "name": "Vulturino Skeletono",
+            "rarity": "Secret",
+            "price": 30000000000,
+            "produces": 56000000,
+            "asset": "vulturino-skeletono"
+        },
+        {
+            "name": "Gorgonzilla",
+            "rarity": "Secret",
+            "price": 24000000000,
+            "produces": 57000000,
+            "asset": "gorgonzilla"
+        },
+        {
+            "name": "La Crazy Combinacion",
+            "rarity": "Secret",
+            "price": 25000000000,
+            "produces": 60000000,
+            "asset": "la-crazy-combinacion"
+        },
+        {
+            "name": "Croissantini et Caffettino",
+            "rarity": "Secret",
+            "price": 27000000000,
+            "produces": 65000000,
+            "asset": "croissantini-et-caffettino"
+        },
+        {
+            "name": "Chocone Dragone",
+            "rarity": "Secret",
+            "price": 70000000000,
+            "produces": 70000000,
+            "asset": "chocone-dragone"
+        },
+        {
+            "name": "Gigalitraktos Spidorobos",
+            "rarity": "Eternal",
+            "price": 150000000000,
+            "produces": 75000000,
+            "asset": "gigalitraktos-spidorobos"
+        },
+        {
+            "name": "Burguro dan Fryuro",
+            "rarity": "Eternal",
+            "price": 125000000000,
+            "produces": 80000000,
+            "asset": "burguro-dan-fryuro"
+        },
+        {
+            "name": "Bearini Plammini Guardini",
+            "rarity": "Eternal",
+            "price": 35000000000,
+            "produces": 85000000,
+            "asset": "bearini-plammini-guardini"
+        },
+        {
+            "name": "Tiramisubmarini",
+            "rarity": "Eternal",
+            "price": 150000000000,
+            "produces": 90000000,
+            "asset": "tiramisubmarini"
+        },
+        {
+            "name": "Tralaledon",
+            "rarity": "Eternal",
+            "price": 175000000000,
+            "produces": 95000000,
+            "asset": "tralaledon"
+        },
+        {
+            "name": "Garbagzilla",
+            "rarity": "Eternal",
+            "price": 200000000000,
+            "produces": 100000000,
+            "asset": "garbagzilla"
+        },
+        {
+            "name": "Fishini Mechinini",
+            "rarity": "Eternal",
+            "price": 215000000000,
+            "produces": 105000000,
+            "asset": "fishini-mechinini"
+        },
+        {
+            "name": "Cannone Maledettone",
+            "rarity": "Eternal",
+            "price": 230000000000,
+            "produces": 115000000,
+            "asset": "cannone-maledettone"
+        },
+        {
+            "name": "La Superior Combinacion",
+            "rarity": "Eternal",
+            "price": 300000000000,
+            "produces": 180000000,
+            "asset": "la-superior-combinacion"
+        },
+        {
+            "name": "Il Maledettones",
+            "rarity": "Eternal",
+            "price": 400000000000,
+            "produces": 200000000,
+            "asset": "il-maledettones"
+        },
+        {
+            "name": "Skibidi Toilet",
+            "rarity": "Goat",
+            "price": 1000000000000,
+            "produces": 350000000,
+            "asset": "skibidi-toilet"
+        }
+    ]
+}

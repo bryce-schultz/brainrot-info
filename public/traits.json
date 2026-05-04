@@ -1,0 +1,15 @@
+{
+    "traits": [
+        { "name": "Default",   "color": "#a8adb7", "multiplier": 0   },
+        { "name": "Lightning", "color": "#fbbf24", "multiplier": 1.5 },
+        { "name": "Frozen",    "color": "#7dd3fc", "multiplier": 2   },
+        { "name": "Fireworks", "color": "#f97316", "multiplier": 2   },
+        { "name": "Cupid",     "color": "#f472b6", "multiplier": 2.5 },
+        { "name": "Wave",      "color": "#3b82f6", "multiplier": 3   },
+        { "name": "Glitch",    "color": "#a3e635", "multiplier": 3   },
+        { "name": "Tung",      "color": "#d97706", "multiplier": 3   },
+        { "name": "Carps",     "color": "#f87171", "multiplier": 3   },
+        { "name": "Pumpkin",   "color": "#ea580c", "multiplier": 4   },
+        { "name": "Skibidi",   "color": "#22d3ee", "multiplier": 5   }
+    ]
+}

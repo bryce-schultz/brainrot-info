@@ -1,0 +1,154 @@
+{
+    "rebirth_tiers": [
+        {
+            "tier": 1,
+            "requiredCash": 1000000,
+            "requiredBrainrots": [
+                "Trippi Troppi",
+                "Tung Tung Tung Sahur"
+            ],
+            "bonus": "2x multiplier"
+        },
+        {
+            "tier": 2,
+            "requiredCash": 3000000,
+            "requiredBrainrots": [
+                "Boneca Ambalabu",
+                "Brr Brr Patapim"
+            ],
+            "bonus": "3x multiplier"
+        },
+        {
+            "tier": 3,
+            "requiredCash": 12500000,
+            "requiredBrainrots": [
+                "Trulimero Trulicina",
+                "Chimpanzini Bananini"
+            ],
+            "bonus": "4x multiplier"
+        },
+        {
+            "tier": 4,
+            "requiredCash": 35000000,
+            "requiredBrainrots": [
+                "Chef Crabracadabra",
+                "Glorbo Fruttodillo"
+            ],
+            "bonus": "5x multiplier"
+        },
+        {
+            "tier": 5,
+            "requiredCash": 100000000,
+            "requiredBrainrots": [
+                "Frigo Camelo",
+                "Orangutini Ananassini"
+            ],
+            "bonus": "6x multiplier"
+        },
+        {
+            "tier": 6,
+            "requiredCash": 250000000,
+            "requiredBrainrots": [
+                "Bombardiro Crocodilo",
+                "Bombombini Gusini"
+            ],
+            "bonus": "7x multiplier"
+        },
+        {
+            "tier": 7,
+            "requiredCash": 1000000000,
+            "requiredBrainrots": [
+                "Cocofanto Elefanto"
+            ],
+            "bonus": "8x multiplier"
+        },
+        {
+            "tier": 8,
+            "requiredCash": 5000000000,
+            "requiredBrainrots": [
+                "Tralalero Tralala"
+            ],
+            "bonus": "9x multiplier"
+        },
+        {
+            "tier": 9,
+            "requiredCash": 25000000000,
+            "requiredBrainrots": [
+                "Odin Din Din Dun"
+            ],
+            "bonus": "10x multiplier"
+        },
+        {
+            "tier": 10,
+            "requiredCash": 200000000000,
+            "requiredBrainrots": [
+                "La Vaca Saturno Saturnita"
+            ],
+            "bonus": "11x multiplier"
+        },
+        {
+            "tier": 11,
+            "requiredCash": 1000000000000,
+            "requiredBrainrots": [
+                "Torrtuginni Dragonfrutinni"
+            ],
+            "bonus": "12x multiplier"
+        },
+        {
+            "tier": 12,
+            "requiredCash": 10000000000000,
+            "requiredBrainrots": [
+                "Trenostruzzo Turbo 3000"
+            ],
+            "bonus": "13x multiplier"
+        },
+        {
+            "tier": 13,
+            "requiredCash": 50000000000000,
+            "requiredBrainrots": [
+                "Orcalero Orcala"
+            ],
+            "bonus": "14x multiplier"
+        },
+        {
+            "tier": 14,
+            "requiredCash": 200000000000000,
+            "requiredBrainrots": [
+                "Garamaramadungdung"
+            ],
+            "bonus": "15x multiplier"
+        },
+        {
+            "tier": 15,
+            "requiredCash": 1000000000000000,
+            "requiredBrainrots": [
+                "La Grande Combinacion"
+            ],
+            "bonus": "16x multiplier"
+        },
+        {
+            "tier": 16,
+            "requiredCash": 5000000000000000,
+            "requiredBrainrots": [
+                "La Esok Sekolah"
+            ],
+            "bonus": "17x multiplier"
+        },
+        {
+            "tier": 17,
+            "requiredCash": 10000000000000000,
+            "requiredBrainrots": [
+                "Cannelloni Dragoni"
+            ],
+            "bonus": "18x multiplier"
+        },
+        {
+            "tier": 18,
+            "requiredCash": 25000000000000000,
+            "requiredBrainrots": [
+                "Gigalitraktos Spidorobos"
+            ],
+            "bonus": "19x multiplier"
+        }
+    ]
+}

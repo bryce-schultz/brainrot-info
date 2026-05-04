@@ -1,0 +1,1081 @@
+:root {
+    --primary-bg: #1a1d29;
+    --secondary-bg: #232735;
+    --accent-color: #00d9ff;
+    --accent-hover: #00b8db;
+    --text-primary: #e4e6eb;
+    --text-secondary: #a8adb7;
+    --border-color: #2d3140;
+    --card-bg: #282c3a;
+    --success-color: #00ff88;
+    --sidebar-collapsed: 60px;
+    --sidebar-expanded: 240px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
+    user-select: none;
+}
+
+input, textarea {
+    user-select: text;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    /* Always show the scrollbar track so its width is reserved even on short pages.
+       Without this, filtered search results that don't scroll cause a layout shift
+       when the bar appears/disappears. */
+    overflow-y: scroll;
+}
+
+/* Sidebar Navigation
+   The expand/collapse is powered entirely by a hidden checkbox + CSS sibling selectors
+   (:checked ~ .sidebar) — no JavaScript required, instant response on any device. */
+#sidebar-toggle {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--sidebar-collapsed);
+    background: var(--secondary-bg);
+    border-right: 1px solid var(--border-color);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    width: var(--sidebar-expanded);
+}
+
+.sidebar-header {
+    padding: 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 60px;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 18px;
+    width: 60px;
+    height: 100%;
+    padding: 0 20px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 1;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+    background: var(--card-bg);
+    color: var(--accent-color);
+}
+
+.site-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text-primary);
+    opacity: 0;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 20px;
+}
+
+#sidebar-toggle:checked ~ .sidebar .site-title {
+    opacity: 1;
+}
+
+.toggle-arrow {
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.toggle-arrow::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid currentColor;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.toggle-arrow::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#sidebar-toggle:checked ~ .sidebar .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.nav-item {
+    margin: 8px 0;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    background: var(--card-bg);
+    color: var(--accent-color);
+}
+
+.nav-link.active {
+    background: var(--card-bg);
+    color: var(--accent-color);
+    border-right: 3px solid var(--accent-color);
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Icon: Rebirth (circular arrows) */
+.icon-rebirth::before,
+.icon-rebirth::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+}
+
+.icon-rebirth::before {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    border-bottom: none;
+}
+
+.icon-rebirth::after {
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    border-top: none;
+    transform: rotate(180deg);
+}
+
+/* Icon: Calculator (grid) */
+.icon-calculator::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    background: 
+        linear-gradient(currentColor, currentColor) 0 35% / 100% 2px no-repeat,
+        linear-gradient(currentColor, currentColor) 0 65% / 100% 2px no-repeat,
+        linear-gradient(currentColor, currentColor) 35% 0 / 2px 100% no-repeat,
+        linear-gradient(currentColor, currentColor) 65% 0 / 2px 100% no-repeat;
+}
+
+/* Icon: Brainrot (curved shape) */
+.icon-brainrot::before,
+.icon-brainrot::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 12px;
+    border: 2px solid currentColor;
+    border-radius: 8px 8px 4px 4px;
+}
+
+.icon-brainrot::before {
+    left: 2px;
+    border-right: none;
+}
+
+.icon-brainrot::after {
+    right: 2px;
+    border-left: none;
+}
+
+/* Icon: Upgrade (arrow up) */
+.icon-upgrade::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid currentColor;
+    top: 2px;
+}
+
+.icon-upgrade::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: currentColor;
+    bottom: 2px;
+}
+
+.nav-text {
+    margin-left: 16px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+#sidebar-toggle:checked ~ .sidebar .nav-text {
+    opacity: 1;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: var(--sidebar-collapsed);
+    padding: 40px;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 100vh;
+}
+
+#sidebar-toggle:checked ~ .main-content {
+    margin-left: var(--sidebar-expanded);
+}
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+.page-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.page-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* Rebirth Cards */
+.rebirth-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.rebirth-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.2s;
+}
+
+.rebirth-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 217, 255, 0.1);
+}
+
+.rebirth-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tier-badge {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: var(--primary-bg);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.bonus-tag {
+    color: var(--success-color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.rebirth-body {
+    display: grid;
+    gap: 16px;
+}
+
+.requirement-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.requirement-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.requirement-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.requirement-value.cash {
+    color: var(--success-color);
+}
+
+.brainrot-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.brainrot-tag {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-family: inherit;
+    transition: opacity 0.15s, transform 0.1s;
+}
+
+.brainrot-tag:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.brainrot-tag.rarity-common    { border-color: #00ff88; color: #00ff88; }
+.brainrot-tag.rarity-rare      { border-color: #4a9eff; color: #4a9eff; }
+.brainrot-tag.rarity-epic      { border-color: #a855f7; color: #a855f7; }
+.brainrot-tag.rarity-legendary { border-color: #fbbf24; color: #fbbf24; }
+.brainrot-tag.rarity-mythic    { border-color: #ef4444; color: #ef4444; }
+.brainrot-tag.rarity-brainrotgod { border-color: #c084fc; color: #c084fc; }
+.brainrot-tag.rarity-secret    { border-color: #f3f4f6; color: #f3f4f6; }
+.brainrot-tag.rarity-eternal   { border-color: #991b1b; color: #cb2a2a; }
+.brainrot-tag.rarity-goat      { border-color: #00d9ff; color: #00d9ff; }
+
+/* Content Placeholder */
+.content-placeholder {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+    font-size: 18px;
+}
+
+/* Search Bar */
+.search-container {
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 500px;
+    padding: 12px 20px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
+}
+
+.search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Brainrots Grid */
+.brainrots-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+/* Brainrot Card */
+.brainrot-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s;
+}
+
+.brainrot-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Rarity-based border colors */
+.brainrot-card.rarity-common { border-color: #00ff88; }
+.brainrot-card.rarity-rare { border-color: #4a9eff; }
+.brainrot-card.rarity-epic { border-color: #a855f7; }
+.brainrot-card.rarity-legendary { border-color: #fbbf24; }
+.brainrot-card.rarity-mythic { border-color: #ef4444; }
+.brainrot-card.rarity-brainrotgod { border-color: #c084fc; }
+.brainrot-card.rarity-secret { border-color: #f3f4f6; }
+.brainrot-card.rarity-eternal { border-color: #991b1b; }
+.brainrot-card.rarity-goat { border-color: #00d9ff; }
+
+.brainrot-content {
+    display: flex;
+    gap: 20px;
+}
+
+.brainrot-image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--secondary-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.brainrot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.brainrot-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.brainrot-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.brainrot-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.detail-value.cost {
+    color: var(--success-color);
+}
+
+.detail-value.production {
+    color: var(--accent-color);
+}
+
+.rarity-badge {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Rarity badge colors */
+.rarity-badge.rarity-common { background: #00ff88; color: var(--primary-bg); }
+.rarity-badge.rarity-rare { background: #4a9eff; color: var(--primary-bg); }
+.rarity-badge.rarity-epic { background: #a855f7; color: white; }
+.rarity-badge.rarity-legendary { background: #fbbf24; color: var(--primary-bg); }
+.rarity-badge.rarity-mythic { background: #ef4444; color: white; }
+.rarity-badge.rarity-brainrotgod { background: #c084fc; color: var(--primary-bg); }
+.rarity-badge.rarity-secret { background: #f3f4f6; color: var(--primary-bg); }
+.rarity-badge.rarity-eternal { background: #991b1b; color: white; }
+.rarity-badge.rarity-goat { background: #00d9ff; color: var(--primary-bg); }
+
+/* ── Calculator ──────────────────────────────────── */
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.calc-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.calc-section-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    justify-content: center;
+}
+
+.calc-hint {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* Brainrot selector — scrollable tile grid (used inside modal) */
+.brainrot-selector-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 380px;
+    overflow-y: auto;
+    padding: 4px 2px;
+}
+
+/* Type / Trait selector */
+.selector-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Shared tile.
+   --tile-color is injected via :style on mutation/trait tiles to color the
+   multiplier text and the active inset glow. The border stays neutral so
+   unselected tiles don't all compete for attention. */
+.selector-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 96px;
+    padding: 8px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.18s, box-shadow 0.18s, transform 0.12s;
+}
+
+.selector-tile:hover {
+    border-color: var(--text-secondary);
+    transform: translateY(-2px);
+}
+
+/* Active: full-opacity border + inset image glow */
+.selector-tile.active {
+    border-color: var(--tile-color, var(--accent-color));
+}
+
+/* Inset glow bleeds in from the edges of the image square */
+.selector-tile.active .tile-image {
+    box-shadow: inset 0 0 16px color-mix(in srgb, var(--tile-color, var(--accent-color)) 70%, transparent);
+}
+
+/* Brainrot tiles: rarity border when idle, rarity glow when active */
+.brainrot-tile.rarity-common    { border-color: #00ff88; }
+.brainrot-tile.rarity-rare      { border-color: #4a9eff; }
+.brainrot-tile.rarity-epic      { border-color: #a855f7; }
+.brainrot-tile.rarity-legendary { border-color: #fbbf24; }
+.brainrot-tile.rarity-mythic    { border-color: #ef4444; }
+.brainrot-tile.rarity-brainrotgod { border-color: #c084fc; }
+.brainrot-tile.rarity-secret    { border-color: #f3f4f6; }
+.brainrot-tile.rarity-eternal   { border-color: #991b1b; }
+.brainrot-tile.rarity-goat      { border-color: #00d9ff; }
+
+.brainrot-tile.rarity-common.active    { box-shadow: 0 0 0 1px #00ff88, 0 0 16px rgba(0,255,136,.45); }
+.brainrot-tile.rarity-rare.active      { box-shadow: 0 0 0 1px #4a9eff, 0 0 16px rgba(74,158,255,.45); }
+.brainrot-tile.rarity-epic.active      { box-shadow: 0 0 0 1px #a855f7, 0 0 16px rgba(168,85,247,.45); }
+.brainrot-tile.rarity-legendary.active { box-shadow: 0 0 0 1px #fbbf24, 0 0 16px rgba(251,191,36,.45); }
+.brainrot-tile.rarity-mythic.active    { box-shadow: 0 0 0 1px #ef4444, 0 0 16px rgba(239,68,68,.45); }
+.brainrot-tile.rarity-brainrotgod.active { box-shadow: 0 0 0 1px #c084fc, 0 0 16px rgba(192,132,252,.45); }
+.brainrot-tile.rarity-secret.active    { box-shadow: 0 0 0 1px #f3f4f6, 0 0 16px rgba(243,244,246,.35); }
+.brainrot-tile.rarity-eternal.active   { box-shadow: 0 0 0 1px #991b1b, 0 0 16px rgba(153,27,27,.55); }
+.brainrot-tile.rarity-goat.active      { box-shadow: 0 0 0 1px #00d9ff, 0 0 16px rgba(0,217,255,.55); }
+
+/* Image placeholder inside tile */
+.tile-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--secondary-bg);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.brainrot-tile .tile-image {
+    font-size: 28px;
+}
+
+.tile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.tile-mult {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--tile-color, var(--accent-color));
+}
+
+.tile-name {
+    font-size: 11px;
+    color: var(--text-primary);
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.3;
+    width: 100%;
+}
+
+/* Result panel */
+/* Stick the result card to the viewport bottom so it stays visible while the user
+   scrolls through the long type/trait grids above it. */
+.calc-result-section {
+    position: sticky;
+    bottom: 24px;
+    z-index: 10;
+}
+
+.calc-result-card {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 24px rgba(0, 217, 255, 0.15);
+    border-radius: 14px;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.calc-result-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.calc-result-value {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.calc-result-formula {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: monospace;
+    user-select: text;
+}
+
+.calc-result-placeholder {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+/* ── Portrait card (brainrot selector placard) ───── */
+.portrait-card-center {
+    display: flex;
+    justify-content: center;
+}
+
+.portrait-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    padding: 16px 12px 12px;
+    cursor: pointer;
+    font-family: inherit;
+    gap: 10px;
+    transition: border-color 0.18s, box-shadow 0.18s, transform 0.12s;
+}
+
+.portrait-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Rarity border colors on portrait card */
+.portrait-card.rarity-common    { border-color: #00ff88; }
+.portrait-card.rarity-rare      { border-color: #4a9eff; }
+.portrait-card.rarity-epic      { border-color: #a855f7; }
+.portrait-card.rarity-legendary { border-color: #fbbf24; }
+.portrait-card.rarity-mythic    { border-color: #ef4444; }
+.portrait-card.rarity-brainrotgod { border-color: #c084fc; }
+.portrait-card.rarity-secret    { border-color: #f3f4f6; }
+.portrait-card.rarity-eternal   { border-color: #991b1b; }
+.portrait-card.rarity-goat      { border-color: #00d9ff; }
+
+.portrait-card.rarity-common:hover    { box-shadow: 0 0 18px rgba(0,255,136,.35); }
+.portrait-card.rarity-rare:hover      { box-shadow: 0 0 18px rgba(74,158,255,.35); }
+.portrait-card.rarity-epic:hover      { box-shadow: 0 0 18px rgba(168,85,247,.35); }
+.portrait-card.rarity-legendary:hover { box-shadow: 0 0 18px rgba(251,191,36,.35); }
+.portrait-card.rarity-mythic:hover    { box-shadow: 0 0 18px rgba(239,68,68,.35); }
+.portrait-card.rarity-brainrotgod:hover { box-shadow: 0 0 18px rgba(192,132,252,.35); }
+.portrait-card.rarity-secret:hover    { box-shadow: 0 0 18px rgba(243,244,246,.25); }
+.portrait-card.rarity-eternal:hover   { box-shadow: 0 0 18px rgba(153,27,27,.5); }
+.portrait-card.rarity-goat:hover      { box-shadow: 0 0 18px rgba(0,217,255,.45); }
+
+.portrait-card.empty {
+    border-color: var(--border-color);
+    border-style: dashed;
+}
+
+.portrait-card.empty:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 14px rgba(0,217,255,.25);
+}
+
+.portrait-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background: var(--secondary-bg);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--text-secondary);
+    overflow: hidden;
+}
+
+.portrait-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.portrait-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    width: 100%;
+}
+
+.portrait-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+}
+
+.portrait-production {
+    font-size: 12px;
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+.portrait-rarity {
+    font-size: 10px;
+    padding: 2px 7px;
+}
+
+.portrait-empty-icon {
+    font-size: 36px;
+    color: var(--text-secondary);
+    line-height: 1;
+}
+
+/* ── Picker modal & overlay ──────────────────────── */
+.picker-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.picker-modal {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    width: min(700px, 100%);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.picker-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px 0;
+}
+
+.picker-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.picker-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+    font-family: inherit;
+    transition: color 0.15s;
+}
+
+.picker-close:hover {
+    color: var(--text-primary);
+}
+
+.picker-search {
+    padding: 16px 24px;
+    position: relative;
+    z-index: 1;
+    background: var(--secondary-bg);
+}
+
+.picker-search .search-input {
+    max-width: 100%;
+}
+
+.picker-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 4px 24px 24px;
+    overflow-y: auto;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .brainrots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brainrot-content {
+        flex-direction: column;
+    }
+
+    .brainrot-image {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 16px 12px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    /* Rebirth */
+    .rebirth-card {
+        padding: 14px;
+    }
+
+    .rebirth-header {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* Calculator */
+    .calculator {
+        gap: 44px;
+    }
+
+    .calc-section-title {
+        font-size: 20px;
+    }
+
+    .selector-tile {
+        width: 80px;
+    }
+
+    .calc-result-card {
+        padding: 16px 18px;
+    }
+
+    .calc-result-value {
+        font-size: 28px;
+    }
+
+    .calc-result-formula {
+        font-size: 11px;
+        text-align: center;
+        word-break: break-all;
+    }
+
+    /* Picker modal — slide up from bottom as a sheet */
+    .picker-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .picker-modal {
+        width: 100%;
+        max-height: 90vh;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .picker-header {
+        padding: 16px 16px 0;
+    }
+
+    .picker-search {
+        padding: 12px 16px;
+    }
+
+    .picker-grid {
+        padding: 4px 12px 32px;
+    }
+}
+
+@media (min-width: 768px) {
+    .rebirth-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}

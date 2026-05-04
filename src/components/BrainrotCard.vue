@@ -1,0 +1,50 @@
+<template>
+  <div class="brainrot-card" :class="`rarity-${brainrot.rarity?.toLowerCase() || 'common'}`">
+    <div class="brainrot-content">
+      <div class="brainrot-image">
+        <img v-if="imgSrc" :src="imgSrc" :alt="brainrot.name" class="brainrot-img" />
+        <div v-else class="image-placeholder">?</div>
+      </div>
+      <div class="brainrot-info">
+        <h3 class="brainrot-name">{{ brainrot.name }}</h3>
+        <div class="brainrot-details">
+          <div class="detail-row">
+            <span class="detail-label">Rarity</span>
+            <span class="detail-value rarity-badge" :class="`rarity-${brainrot.rarity?.toLowerCase() || 'common'}`">
+              {{ brainrot.rarity || 'Common' }}
+            </span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Cost</span>
+            <span class="detail-value cost">{{ formatCash(brainrot.price) }}</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Production</span>
+            <span class="detail-value production">{{ formatCash(brainrot.produces) }}/s</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { computed } from 'vue';
+import { formatCash } from '../utils/formatCash.js';
+import { getBrainrotImage } from '../utils/brainrotImage.js';
+
+const props = defineProps({
+  brainrot: {
+    type: Object,
+    required: true
+  }
+});
+
+const imgSrc = computed(() => getBrainrotImage(props.brainrot.asset));
+
+
+</script>
+
+<style scoped>
+/* Component-specific styles in main style.css */
+</style>
