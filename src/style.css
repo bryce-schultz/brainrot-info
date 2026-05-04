@@ -1051,13 +1051,13 @@ body {
 
     /* Picker modal — slide up from bottom as a sheet */
     .picker-overlay {
-        padding: 0;
+        padding: env(safe-area-inset-top, 48px) 0 0;
         align-items: flex-end;
     }
 
     .picker-modal {
         width: 100%;
-        max-height: 90vh;
+        max-height: 90dvh;
         border-radius: 20px 20px 0 0;
     }
 
