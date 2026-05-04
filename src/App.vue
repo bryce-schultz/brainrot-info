@@ -47,6 +47,29 @@
           />
         </div>
       </div>
+
+      <!-- About Page -->
+      <div v-else-if="currentPage === 'about'" class="about-page">
+        <section class="about-section">
+          <h3 class="about-heading">What is Brainrot Info?</h3>
+          <p>Brainrot Info is an unofficial, fan-made reference site built to help players navigate <strong>Steal the Brainrot</strong>, the Fortnite minigame. It covers rebirth tiers, brainrot stats, and provides a calculator so you can plan your runs without having to look everything up in-game.</p>
+          <p>The site started as a personal project because there was no single place to find this information in one spot. If it helps other players, that's the whole point.</p>
+        </section>
+
+        <section class="about-section">
+          <h3 class="about-heading">Copyright & Disclaimer</h3>
+          <p>This website is <strong>not affiliated with, endorsed by, or in any way connected to Epic Games</strong> or any of its subsidiaries. Fortnite and all related names, characters, and game content are the intellectual property of Epic Games, Inc.</p>
+          <p>No copyrighted assets (images, audio, or game text) are reproduced here. All data displayed on this site is community-sourced and independently maintained. This site exists purely as a fan resource with no commercial intent.</p>
+          <p>If you are a rights holder and have a concern about any content on this site, please reach out and it will be addressed promptly.</p>
+        </section>
+
+        <section class="about-section">
+          <h3 class="about-heading">Data & Accuracy</h3>
+          <p>Stats and rebirth requirements are maintained by community contributors and may not always reflect the latest game patch. If you spot something out of date, the project is open to corrections.</p>
+        </section>
+
+        <p class="about-copy">&copy; {{ new Date().getFullYear() }} Brainrot Info &mdash; Unofficial fan site.</p>
+      </div>
     </main>
   </div>
 </template>
@@ -66,7 +89,7 @@ const traitsData = ref([]);
 const searchTerm = ref('');
 
 // Whitelist of valid page IDs — any unrecognised hash falls back to 'rebirth'.
-const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots']);
+const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'about']);
 
 const parseHash = () => {
   const hash = window.location.hash.slice(1);
@@ -100,16 +123,18 @@ const pageTitle = computed(() => {
   const titles = {
     rebirth: 'Rebirth Guide',
     calculator: 'Calculator',
-    brainrots: 'Brainrots'
+    brainrots: 'Brainrots',
+    about: 'About'
   };
   return titles[currentPage.value] || 'Rebirth Guide';
 });
 
 const pageSubtitle = computed(() => {
   const subtitles = {
-    rebirth: 'Plan your rebirth strategy with tier requirements and bonuses',
-    calculator: 'Calculate your earnings and progress',
-    brainrots: 'View all available brainrots and their stats'
+    rebirth: 'Plan your rebirth path with tier requirements, costs, and bonuses.',
+    calculator: 'Estimate production and compare options with the unofficial calculator.',
+    brainrots: 'Browse the current brainrot list with rarity, cost, and production details.',
+    about: ''
   };
   return subtitles[currentPage.value] || '';
 });

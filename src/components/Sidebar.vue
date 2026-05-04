@@ -45,7 +45,8 @@ const isExpanded = ref(false);
 const navItems = [
   { id: 'rebirth', href: '#rebirth', text: 'Rebirth Guide', iconClass: 'icon-upgrade' },
   { id: 'calculator', href: '#calculator', text: 'Calculator', iconClass: 'icon-calculator' },
-  { id: 'brainrots', href: '#brainrots', text: 'Brainrots', iconClass: 'icon-brainrot' }
+  { id: 'brainrots', href: '#brainrots', text: 'Brainrots', iconClass: 'icon-brainrot' },
+  { id: 'about', href: '#about', text: 'About', iconClass: 'icon-info' }
 ];
 </script>
 
