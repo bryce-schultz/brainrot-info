@@ -148,6 +148,14 @@ const filteredBrainrots = computed(() => {
   if (!searchTerm.value) {
     return visibleBrainrots;
   }
+
+  // #<id> prefix: exact match by numeric ID
+  if (searchTerm.value.startsWith('#')) {
+    const id = parseInt(searchTerm.value.slice(1), 10);
+    if (!isNaN(id)) {
+      return visibleBrainrots.filter(brainrot => brainrot.id === id);
+    }
+  }
   
   const search = searchTerm.value.toLowerCase();
   return visibleBrainrots.filter(brainrot => 
@@ -171,7 +179,9 @@ const handleNavigate = (pageId) => {
 };
 
 const handleBrainrotSearch = (name) => {
-  navigate('brainrots', name);
+  const brainrot = brainrotsData.value.find(b => b.name === name);
+  const query = brainrot ? `#${brainrot.id}` : name;
+  navigate('brainrots', query);
 };
 
 watch(currentPage, () => {
@@ -192,7 +202,9 @@ onMounted(async () => {
   try {
     const data = await fetchJson('/data.json');
     rebirthData.value = Array.isArray(data.rebirths) ? data.rebirths : [];
-    brainrotsData.value = Array.isArray(data.brainrots) ? data.brainrots : [];
+    brainrotsData.value = Array.isArray(data.brainrots)
+      ? data.brainrots.map((b, i) => ({ ...b, id: i + 1 }))
+      : [];
     typesData.value = Array.isArray(data.types) ? data.types : [];
     traitsData.value = Array.isArray(data.traits) ? data.traits : [];
   } catch (error) {
