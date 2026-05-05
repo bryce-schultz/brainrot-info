@@ -9,8 +9,27 @@
         <p class="page-subtitle">{{ pageSubtitle }}</p>
       </div>
 
+      <!-- Brainrots Page -->
+      <div v-if="currentPage === 'brainrots'">
+        <div class="search-container">
+          <input 
+            type="text" 
+            v-model="searchTerm" 
+            placeholder="Search"
+            class="search-input"
+          />
+        </div>
+        <div class="brainrots-grid">
+          <BrainrotCard 
+            v-for="brainrot in filteredBrainrots" 
+            :key="brainrot.name" 
+            :brainrot="brainrot" 
+          />
+        </div>
+      </div>
+
       <!-- Rebirth Guide Page -->
-      <div v-if="currentPage === 'rebirth'" class="rebirth-grid">
+      <div v-else-if="currentPage === 'rebirth'" class="rebirth-grid">
         <RebirthCard 
           v-for="tier in rebirthData" 
           :key="tier.tier" 
@@ -27,25 +46,6 @@
           :types="typesData"
           :traits="traitsData"
         />
-      </div>
-
-      <!-- Brainrots Page -->
-      <div v-else-if="currentPage === 'brainrots'">
-        <div class="search-container">
-          <input 
-            type="text" 
-            v-model="searchTerm" 
-            placeholder="Search"
-            class="search-input"
-          />
-        </div>
-        <div class="brainrots-grid">
-          <BrainrotCard 
-            v-for="brainrot in filteredBrainrots" 
-            :key="brainrot.name" 
-            :brainrot="brainrot" 
-          />
-        </div>
       </div>
 
       <!-- About Page -->
@@ -81,7 +81,7 @@ import RebirthCard from './components/RebirthCard.vue';
 import BrainrotCard from './components/BrainrotCard.vue';
 import Calculator from './components/Calculator.vue';
 
-const currentPage = ref('rebirth');
+const currentPage = ref('brainrots');
 const rebirthData = ref([]);
 const brainrotsData = ref([]);
 const typesData = ref([]);
@@ -99,7 +99,7 @@ const parseHash = () => {
   const rawPage = qIndex === -1 ? hash : hash.slice(0, qIndex);
   const rawQuery = qIndex === -1 ? '' : hash.slice(qIndex + 3);
 
-  const page = VALID_PAGES.has(rawPage) ? rawPage : 'rebirth';
+  const page = VALID_PAGES.has(rawPage) ? rawPage : 'brainrots';
 
   let search = '';
   if (rawQuery) {
