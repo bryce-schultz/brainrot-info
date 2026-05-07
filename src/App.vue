@@ -93,13 +93,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
 import Sidebar from './components/Sidebar.vue';
 import RebirthCard from './components/RebirthCard.vue';
 import BrainrotCard from './components/BrainrotCard.vue';
 import Calculator from './components/Calculator.vue';
 import Machine from './components/Machine.vue';
-import { trackAdsEvent } from './utils/adsTracking.js';
+import { trackAdsEvent, trackAdsConversion } from './utils/adsTracking.js';
 
 const currentPage = ref('brainrots');
 const rebirthData = ref([]);
@@ -108,6 +108,8 @@ const typesData = ref([]);
 const traitsData = ref([]);
 const machineData = ref(null);
 const searchTerm = ref('');
+const lastTrackedSearch = ref('');
+let searchConversionTimer = null;
 
 // Whitelist of valid page IDs — any unrecognised hash falls back to 'rebirth'.
 const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'about']);
@@ -214,12 +216,47 @@ const handleGithubClick = () => {
   });
 };
 
-watch(currentPage, () => {
+const trackPageConversions = (pageId) => {
+  if (pageId === 'brainrots') {
+    trackAdsConversion({
+      label: '6teECKG71fQBEJPNn-IB',
+      value: 0.0
+    });
+  }
+};
+
+const trackSearchConversion = (rawSearch) => {
+  if (currentPage.value !== 'brainrots') return;
+
+  const normalizedSearch = rawSearch.trim().toLowerCase();
+  if (!normalizedSearch || normalizedSearch === lastTrackedSearch.value) return;
+
+  trackAdsConversion({
+    label: 'Y__tCKq71fQBEJPNn-IB',
+    value: 0.0
+  });
+
+  lastTrackedSearch.value = normalizedSearch;
+};
+
+watch(currentPage, (pageId) => {
   window.scrollTo(0, 0);
+  trackPageConversions(pageId);
+});
+
+watch(searchTerm, (value) => {
+  if (searchConversionTimer) {
+    clearTimeout(searchConversionTimer);
+  }
+
+  searchConversionTimer = setTimeout(() => {
+    trackSearchConversion(value);
+  }, 400);
 });
 
 onMounted(async () => {
   applyHash();
+  trackPageConversions(currentPage.value);
   window.addEventListener('popstate', applyHash);
 
   // Helper — fetch JSON and surface non-2xx as a rejection so allSettled catches it.
@@ -240,6 +277,13 @@ onMounted(async () => {
     machineData.value = data.machine ?? null;
   } catch (error) {
     console.error('Error loading site data:', error);
+  }
+});
+
+onUnmounted(() => {
+  window.removeEventListener('popstate', applyHash);
+  if (searchConversionTimer) {
+    clearTimeout(searchConversionTimer);
   }
 });
 </script>
