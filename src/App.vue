@@ -48,6 +48,14 @@
         />
       </div>
 
+      <!-- Machine Page -->
+      <div v-else-if="currentPage === 'machine'">
+        <Machine
+          :brainrots="brainrotsData"
+          :machine="machineData"
+        />
+      </div>
+
       <!-- About Page -->
       <div v-else-if="currentPage === 'about'" class="about-page">
         <section class="about-section">
@@ -80,16 +88,18 @@ import Sidebar from './components/Sidebar.vue';
 import RebirthCard from './components/RebirthCard.vue';
 import BrainrotCard from './components/BrainrotCard.vue';
 import Calculator from './components/Calculator.vue';
+import Machine from './components/Machine.vue';
 
 const currentPage = ref('brainrots');
 const rebirthData = ref([]);
 const brainrotsData = ref([]);
 const typesData = ref([]);
 const traitsData = ref([]);
+const machineData = ref(null);
 const searchTerm = ref('');
 
 // Whitelist of valid page IDs — any unrecognised hash falls back to 'rebirth'.
-const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'about']);
+const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'about']);
 
 const parseHash = () => {
   const hash = window.location.hash.slice(1);
@@ -124,6 +134,7 @@ const pageTitle = computed(() => {
     rebirth: 'Rebirth Guide',
     calculator: 'Calculator',
     brainrots: 'Brainrots',
+    machine: 'Eternal Machine',
     about: 'About'
   };
   return titles[currentPage.value] || 'Rebirth Guide';
@@ -134,6 +145,7 @@ const pageSubtitle = computed(() => {
     rebirth: 'Plan your rebirth path with tier requirements, costs, and bonuses.',
     calculator: 'Estimate production and compare options with the unofficial calculator.',
     brainrots: 'Browse the current brainrot list with rarity, cost, and production details.',
+    machine: 'Simulate the Eternal Machine — pick 5 Mythic+ brainrots and see what you could get.',
     about: ''
   };
   return subtitles[currentPage.value] || '';
@@ -207,6 +219,7 @@ onMounted(async () => {
       : [];
     typesData.value = Array.isArray(data.types) ? data.types : [];
     traitsData.value = Array.isArray(data.traits) ? data.traits : [];
+    machineData.value = data.machine ?? null;
   } catch (error) {
     console.error('Error loading site data:', error);
   }

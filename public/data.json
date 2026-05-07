@@ -2068,5 +2068,747 @@
             "color": "#22d3ee",
             "multiplier": 5
         }
-    ]
+    ],
+    "machine": {
+        "thresholds": [
+            {
+                "amount": 0,
+                "options": [
+                    {
+                        "brainrot": "Te Te Te Sahur",
+                        "chance": 0.60,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "brainrot": "Ti Ti Ti Sahur",
+                        "chance": 0.30,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "brainrot": "Los Vaquitas Saturnitas",
+                        "chance": 0.10,
+                        "luckyChance": 0.20
+                    }
+                ]
+            },
+            {
+                "amount": 100000,
+                "options": [
+                    {
+                        "brainrot": "Te Te Te Sahur",
+                        "chance": 0.35,
+                        "luckyChance": 0.25
+                    },
+                    {
+                        "brainrot": "Ti Ti Ti Sahur",
+                        "chance": 0.30,
+                        "luckyChance": 0.25
+                    },
+                    {
+                        "brainrot": "Los Vaquitas Saturnitas",
+                        "chance": 0.20,
+                        "luckyChance": 0.25
+                    },
+                    {
+                        "brainrot": "Alessiooooooo",
+                        "chance": 0.15,
+                        "luckyChance": 0.25
+                    }
+                ]
+            },
+            {
+                "amount": 200000,
+                "options": [
+                    {
+                        "brainrot": "Los Vaquitas Saturnitas",
+                        "chance": 0.50,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "brainrot": "Alessiooooooo",
+                        "chance": 0.35,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "brainrot": "Il Bisonte Giuppitere",
+                        "chance": 0.10,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "brainrot": "Las Agarrinis",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 300000,
+                "options": [
+                    {
+                        "brainrot": "Los Vaquitas Saturnitas",
+                        "chance": 0.15,
+                        "luckyChance": 0.10
+                    },
+                    {
+                        "brainrot": "Alessiooooooo",
+                        "chance": 0.40,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "brainrot": "Il Bisonte Giuppitere",
+                        "chance": 0.30,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "brainrot": "Las Agarrinis",
+                        "chance": 0.15,
+                        "luckyChance": 0.25
+                    }
+                ]
+            },
+            {
+                "amount": 500000,
+                "options": [
+                    {
+                        "brainrot": "Alessiooooooo",
+                        "chance": 0.25,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "brainrot": "Il Bisonte Giuppitere",
+                        "chance": 0.25,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "brainrot": "Las Agarrinis",
+                        "chance": 0.35,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "brainrot": "Pickolini Malakini",
+                        "chance": 0.10,
+                        "luckyChance": 0.15
+                    },
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 750000,
+                "options": [
+                    {
+                        "brainrot": "Alessiooooooo",
+                        "chance": 0.15,
+                        "luckyChance": 0.10
+                    },
+                    {
+                        "brainrot": "Il Bisonte Giuppitere",
+                        "chance": 0.10,
+                        "luckyChance": 0.10
+                    },
+                    {
+                        "brainrot": "Las Agarrinis",
+                        "chance": 0.55,
+                        "luckyChance": 0.45
+                    },
+                    {
+                        "brainrot": "Pickolini Malakini",
+                        "chance": 0.15,
+                        "luckyChance": 0.25
+                    },
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 1000000,
+                "options": [
+                    {
+                        "brainrot": "Las Agarrinis",
+                        "chance": 0.50,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "brainrot": "Pickolini Malakini",
+                        "chance": 0.30,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.20,
+                        "luckyChance": 0.35
+                    }
+                ]
+            },
+            {
+                "amount": 1500000,
+                "options": [
+                    {
+                        "brainrot": "Las Agarrinis",
+                        "chance": 0.30,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "brainrot": "Pickolini Malakini",
+                        "chance": 0.30,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.35,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "group": "1",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 2000000,
+                "options": [
+                    {
+                        "brainrot": "Pickolini Malakini",
+                        "chance": 0.30,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.55,
+                        "luckyChance": 0.50
+                    },
+                    {
+                        "group": "1",
+                        "chance": 0.15,
+                        "luckyChance": 0.30
+                    }
+                ]
+            },
+            {
+                "amount": 3000000,
+                "options": [
+                    {
+                        "brainrot": "Pickolini Malakini",
+                        "chance": 0.10,
+                        "luckyChance": 0.05
+                    },
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.60,
+                        "luckyChance": 0.50
+                    },
+                    {
+                        "group": "1",
+                        "chance": 0.25,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 4000000,
+                "options": [
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.45,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "group": "1",
+                        "chance": 0.35,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.20,
+                        "luckyChance": 0.30
+                    }
+                ]
+            },
+            {
+                "amount": 5000000,
+                "options": [
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.25,
+                        "luckyChance": 0.10
+                    },
+                    {
+                        "group": "1",
+                        "chance": 0.50,
+                        "luckyChance": 0.50
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.25,
+                        "luckyChance": 0.40
+                    }
+                ]
+            },
+            {
+                "amount": 6500000,
+                "options": [
+                    {
+                        "brainrot": "Pot Hotspot",
+                        "chance": 0.05,
+                        "luckyChance": 0.05
+                    },
+                    {
+                        "group": "1",
+                        "chance": 0.60,
+                        "luckyChance": 0.45
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.30,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 8000000,
+                "options": [
+                    {
+                        "group": "1",
+                        "chance": 0.55,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.35,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.10,
+                        "luckyChance": 0.20
+                    }
+                ]
+            },
+            {
+                "amount": 10000000,
+                "options": [
+                    {
+                        "group": "1",
+                        "chance": 0.35,
+                        "luckyChance": 0.25
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.45,
+                        "luckyChance": 0.45
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.20,
+                        "luckyChance": 0.30
+                    }
+                ]
+            },
+            {
+                "amount": 12000000,
+                "options": [
+                    {
+                        "group": "1",
+                        "chance": 0.20,
+                        "luckyChance": 0.10
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.40,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.35,
+                        "luckyChance": 0.45
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 16000000,
+                "options": [
+                    {
+                        "group": "1",
+                        "chance": 0.10,
+                        "luckyChance": 0.05
+                    },
+                    {
+                        "group": "2",
+                        "chance": 0.35,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.45,
+                        "luckyChance": 0.45
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.10,
+                        "luckyChance": 0.20
+                    }
+                ]
+            },
+            {
+                "amount": 20000000,
+                "options": [
+                    {
+                        "group": "2",
+                        "chance": 0.30,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.50,
+                        "luckyChance": 0.45
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.15,
+                        "luckyChance": 0.25
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 25000000,
+                "options": [
+                    {
+                        "group": "2",
+                        "chance": 0.20,
+                        "luckyChance": 0.10
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.50,
+                        "luckyChance": 0.40
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.20,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.10,
+                        "luckyChance": 0.20
+                    }
+                ]
+            },
+            {
+                "amount": 30000000,
+                "options": [
+                    {
+                        "group": "2",
+                        "chance": 0.15,
+                        "luckyChance": 0.10
+                    },
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.40,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.30,
+                        "luckyChance": 0.35
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.10,
+                        "luckyChance": 0.15
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.05,
+                        "luckyChance": 0.10
+                    }
+                ]
+            },
+            {
+                "amount": 35000000,
+                "options": [
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.40,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.35,
+                        "luckyChance": 0.33
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.15,
+                        "luckyChance": 0.22
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.10,
+                        "luckyChance": 0.15
+                    }
+                ]
+            },
+            {
+                "amount": 40000000,
+                "options": [
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.35,
+                        "luckyChance": 0.24
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.35,
+                        "luckyChance": 0.31
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.15,
+                        "luckyChance": 0.22
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.10,
+                        "luckyChance": 0.15
+                    },
+                    {
+                        "brainrot": "Gorgonzilla",
+                        "chance": 0.05,
+                        "luckyChance": 0.08
+                    }
+                ]
+            },
+            {
+                "amount": 45000000,
+                "options": [
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.29,
+                        "luckyChance": 0.19
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.40,
+                        "luckyChance": 0.34
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.15,
+                        "luckyChance": 0.22
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.10,
+                        "luckyChance": 0.15
+                    },
+                    {
+                        "brainrot": "Gorgonzilla",
+                        "chance": 0.05,
+                        "luckyChance": 0.8
+                    },
+                    {
+                        "brainrot": "Croissantini et Caffettino",
+                        "chance": 0.01,
+                        "luckyChance": 0.02
+                    }
+                ]
+            },
+            {
+                "amount": 55000000,
+                "options": [
+                    {
+                        "brainrot": "Nooo My Bicicleteira",
+                        "chance": 0.25,
+                        "luckyChance": 0.12
+                    },
+                    {
+                        "group": "3",
+                        "chance": 0.35,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.20,
+                        "luckyChance": 0.27
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.13,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "brainrot": "Gorgonzilla",
+                        "chance": 0.05,
+                        "luckyChance": 0.8
+                    },
+                    {
+                        "brainrot": "Croissantini et Caffettino",
+                        "chance": 0.02,
+                        "luckyChance": 0.03
+                    }
+                ]
+            },
+            {
+                "amount": 65000000,
+                "options": [
+                    {
+                        "group": "3",
+                        "chance": 0.49,
+                        "luckyChance": 0.32
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.25,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.17,
+                        "luckyChance": 0.23
+                    },
+                    {
+                        "brainrot": "Gorgonzilla",
+                        "chance": 0.06,
+                        "luckyChance": 0.09
+                    },
+                    {
+                        "brainrot": "Croissantini et Caffettino",
+                        "chance": 0.02,
+                        "luckyChance": 0.04
+                    },
+                    {
+                        "group": "6",
+                        "chance": 0.01,
+                        "luckyChance": 0.02
+                    }
+                ]
+            },
+            {
+                "amount": 80000000,
+                "options": [
+                    {
+                        "group": "3",
+                        "chance": 0.375,
+                        "luckyChance": 0.20
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.30,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.20,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "brainrot": "Gorgonzilla",
+                        "chance": 0.08,
+                        "luckyChance": 0.12
+                    },
+                    {
+                        "brainrot": "Croissantini et Caffettino",
+                        "chance": 0.03,
+                        "luckyChance": 0.05
+                    },
+                    {
+                        "group": "6",
+                        "chance": 0.015,
+                        "luckyChance": 0.03
+                    }
+                ]
+            },
+            {
+                "amount": 100000000,
+                "options": [
+                    {
+                        "group": "3",
+                        "chance": 0.255,
+                        "luckyChance": 0.16
+                    },
+                    {
+                        "group": "4",
+                        "chance": 0.35,
+                        "luckyChance": 0.30
+                    },
+                    {
+                        "group": "5",
+                        "chance": 0.25,
+                        "luckyChance": 0.33
+                    },
+                    {
+                        "brainrot": "Gorgonzilla",
+                        "chance": 0.10,
+                        "luckyChance": 0.14
+                    },
+                    {
+                        "brainrot": "Croissantini et Caffettino",
+                        "chance": 0.04,
+                        "luckyChance": 0.06
+                    },
+                    {
+                        "brainrot": "La Superior Combinacion",
+                        "chance": 0.005,
+                        "luckyChance": 0.01
+                    }
+                ]
+            }
+        ],
+        "groups": {
+            "1": [
+                "Fragola La La La", 
+                "Yess My Hotspot", 
+                "Nuclearo Dinosauro"
+            ],
+            "2": [
+                "Cacasito Satelito", 
+                "Crocodila Bicicleteira"
+            ],
+            "3": [
+                "Chimpanzini Kingini", 
+                "Penguini Armorini Kingini"
+            ],
+            "4": [
+                "Tictac Tictac Sahur", 
+                "Tractoro Dinosauro"
+            ],
+            "5": [
+                "Cabritos Brotheritos",
+                "Cornzilla"
+            ],
+            "6": [
+                "Burguro Dan Fryuro",
+                "Tiramisubmarini",
+                "Tralaledon"
+            ]
+        }
+    }
 }

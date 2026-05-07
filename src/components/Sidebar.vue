@@ -46,6 +46,7 @@ const navItems = [
   { id: 'brainrots', href: '#brainrots', text: 'Brainrots', iconClass: 'icon-brainrot' },
   { id: 'rebirth', href: '#rebirth', text: 'Rebirth Guide', iconClass: 'icon-upgrade' },
   { id: 'calculator', href: '#calculator', text: 'Calculator', iconClass: 'icon-calculator' },
+  { id: 'machine', href: '#machine', text: 'Eternal Machine', iconClass: 'icon-machine' },
   { id: 'about', href: '#about', text: 'About', iconClass: 'icon-info' }
 ];
 </script>

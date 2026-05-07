@@ -1043,6 +1043,7 @@ body {
     gap: 10px;
     padding: 4px 24px 24px;
     overflow-y: auto;
+    overscroll-behavior: contain;
     justify-content: center;
 }
 
@@ -1148,5 +1149,383 @@ body {
 @media (min-width: 768px) {
     .rebirth-grid {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+/* ── Machine Simulator ───────────────────────────── */
+.machine {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.machine-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.machine-section-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    text-align: center;
+}
+
+.machine-hint {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* Five portrait-card slots in a flex row */
+.machine-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* Production / threshold info bar */
+.machine-production-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px 28px;
+}
+
+.machine-production-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.machine-luck-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+}
+
+.machine-luck-toggle input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent-color);
+}
+
+.machine-production-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.machine-production-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.machine-production-value.threshold-val {
+    color: var(--success-color);
+}
+
+.machine-production-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-color);
+    flex-shrink: 0;
+}
+
+/* Odds row */
+.machine-odds-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.machine-odds-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 104px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.machine-odds-portrait {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: box-shadow 0.18s;
+}
+
+/* Rarity border colours on odds portrait */
+.machine-odds-portrait.rarity-mythic    { border-color: #ef4444; }
+.machine-odds-portrait.rarity-brainrotgod { border-color: #c084fc; }
+.machine-odds-portrait.rarity-secret    { border-color: #f3f4f6; }
+.machine-odds-portrait.rarity-eternal   { border-color: #991b1b; }
+.machine-odds-portrait.rarity-goat      { border-color: #00d9ff; }
+
+.machine-odds-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.machine-odds-unknown {
+    font-size: 28px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.machine-odds-name {
+    font-size: 11px;
+    color: var(--text-primary);
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.3;
+    width: 100%;
+}
+
+.machine-odds-chance {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-top: auto;
+}
+
+/* Group box for grouped odds */
+.machine-odds-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-radius: 12px;
+    padding: 10px 12px 8px;
+    background: var(--card-bg);
+}
+
+.machine-odds-group-members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.machine-odds-group-chance {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 6px;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Merge button */
+.machine-merge-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.machine-merge-btn {
+    padding: 14px 48px;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.12s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(0, 217, 255, 0.3);
+}
+
+.machine-merge-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 217, 255, 0.45);
+}
+
+.machine-merge-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.machine-merge-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.machine-merge-hint {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Merge result modal */
+.merge-result-modal {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    width: min(360px, calc(100vw - 32px));
+    padding: 28px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.merge-result-header {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.merge-result-portrait {
+    width: 180px;
+    height: 180px;
+    border-radius: 14px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Rarity border glow on result portrait */
+.merge-result-portrait.rarity-mythic    { border-color: #ef4444; box-shadow: 0 0 22px rgba(239,68,68,.4); }
+.merge-result-portrait.rarity-brainrotgod { border-color: #c084fc; box-shadow: 0 0 22px rgba(192,132,252,.4); }
+.merge-result-portrait.rarity-secret    { border-color: #f3f4f6; box-shadow: 0 0 22px rgba(243,244,246,.25); }
+.merge-result-portrait.rarity-eternal   { border-color: #991b1b; box-shadow: 0 0 22px rgba(153,27,27,.5); }
+.merge-result-portrait.rarity-goat      { border-color: #00d9ff; box-shadow: 0 0 22px rgba(0,217,255,.45); }
+
+.merge-result-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.merge-result-unknown {
+    font-size: 56px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.merge-result-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.merge-result-sub {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.merge-result-produces {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--success-color);
+}
+
+.merge-dismiss-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    margin-top: 4px;
+}
+
+.merge-dismiss-btn:hover {
+    background: var(--secondary-bg);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Icon: Machine (cog) */
+.icon-machine {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+}
+
+.icon-machine::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+}
+
+.icon-machine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(currentColor, currentColor) 50% 0   / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 50% 100%/ 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 0   50% / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 100% 50%/ 4px 4px no-repeat;
+}
+
+/* Machine responsive */
+@media (max-width: 480px) {
+    .machine-production-bar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .machine-production-divider {
+        width: 40px;
+        height: 1px;
+    }
+
+    .machine-odds-item {
+        width: 88px;
+    }
+
+    .machine-luck-toggle {
+        gap: 6px;
     }
 }
