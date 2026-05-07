@@ -52,8 +52,8 @@
               :class="`rarity-${getBrainrot(opt.name)?.rarity?.toLowerCase() ?? 'secret'}`"
             >
               <img
-                v-if="getImage(getBrainrot(opt.name)?.asset)"
-                :src="getImage(getBrainrot(opt.name)?.asset)"
+                v-if="getImage(opt.name)"
+                :src="getImage(opt.name)"
                 :alt="opt.name"
                 class="machine-odds-img"
               />
@@ -75,8 +75,8 @@
                   :class="`rarity-${getBrainrot(name)?.rarity?.toLowerCase() ?? 'secret'}`"
                 >
                   <img
-                    v-if="getImage(getBrainrot(name)?.asset)"
-                    :src="getImage(getBrainrot(name)?.asset)"
+                    v-if="getImage(name)"
+                    :src="getImage(name)"
                     :alt="name"
                     class="machine-odds-img"
                   />
@@ -126,8 +126,8 @@
             :class="`rarity-${mergeResult.rarity?.toLowerCase()}`"
           >
             <img
-              v-if="getImage(mergeResult.asset)"
-              :src="getImage(mergeResult.asset)"
+              v-if="getImage(mergeResult.name)"
+              :src="getImage(mergeResult.name)"
               :alt="mergeResult.name"
               class="merge-result-img"
             />

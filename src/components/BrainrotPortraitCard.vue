@@ -36,5 +36,5 @@ const props = defineProps({
 
 defineEmits(['click']);
 
-const imgSrc = computed(() => getBrainrotImage(props.brainrot?.asset));
+const imgSrc = computed(() => getBrainrotImage(props.brainrot?.name));
 </script>
