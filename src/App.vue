@@ -76,6 +76,11 @@
           <p>Stats and rebirth requirements are maintained by community contributors and may not always reflect the latest game patch. If you spot something out of date, the project is open to corrections.</p>
         </section>
 
+        <section class="about-section">
+          <h3 class="about-heading">Eternal Machine Disclaimer</h3>
+          <p>The Eternal Machine simulator is <strong>not representative of what you will receive in-game</strong>. It is a simulation built on the same probability logic the machine uses, intended to give you a sense of output frequency and relative rarity — nothing more. Results in the actual game are determined by the game's own systems and will vary. <strong>No particular outcome is guaranteed.</strong></p>
+        </section>
+
         <p class="about-copy">&copy; {{ new Date().getFullYear() }} Brainrot Info &mdash; Unofficial fan site.</p>
       </div>
     </main>
