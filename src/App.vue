@@ -81,6 +81,11 @@
           <p>The Eternal Machine simulator is <strong>not representative of what you will receive in-game</strong>. It is a simulation built on the same probability logic the machine uses, intended to give you a sense of output frequency and relative rarity — nothing more. Results in the actual game are determined by the game's own systems and will vary. <strong>No particular outcome is guaranteed.</strong></p>
         </section>
 
+        <section class="about-section">
+          <h2 class="about-heading">Bugs & Contributions</h2>
+          <p>Found a bug or have a suggestion? The project is open source — you can report issues or submit contributions on <a href="https://github.com/bryce-schultz/brainrot-info" target="_blank" rel="noopener noreferrer" @click="handleGithubClick">GitHub</a>.</p>
+        </section>
+
         <p class="about-copy">&copy; {{ new Date().getFullYear() }} Brainrot Info &mdash; Unofficial fan site.</p>
       </div>
     </main>
@@ -94,6 +99,7 @@ import RebirthCard from './components/RebirthCard.vue';
 import BrainrotCard from './components/BrainrotCard.vue';
 import Calculator from './components/Calculator.vue';
 import Machine from './components/Machine.vue';
+import { trackAdsEvent } from './utils/adsTracking.js';
 
 const currentPage = ref('brainrots');
 const rebirthData = ref([]);
@@ -199,6 +205,13 @@ const handleBrainrotSearch = (name) => {
   const brainrot = brainrotsData.value.find(b => b.name === name);
   const query = brainrot ? `#${brainrot.id}` : name;
   navigate('brainrots', query);
+};
+
+const handleGithubClick = () => {
+  trackAdsEvent('click_github_link', {
+    event_category: 'engagement',
+    event_label: 'about_page'
+  });
 };
 
 watch(currentPage, () => {

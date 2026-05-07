@@ -915,6 +915,15 @@ body {
     color: var(--text-primary);
 }
 
+.about-section a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.about-section a:hover {
+    text-decoration: underline;
+}
+
 .about-copy {
     font-size: 13px;
     color: var(--text-secondary);

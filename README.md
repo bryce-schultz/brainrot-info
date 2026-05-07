@@ -6,6 +6,12 @@ Live at **[brainrot-info.com](https://brainrot-info.com)**
 
 ---
 
+## Custom Artwork
+
+The original artwork for the brainrots is created by **Andres D.** As more images become available, they will be added to the app.
+
+---
+
 ## Features
 
 - **Rebirth Guide** — all 18 rebirth tiers with required cash, required brainrots (colour-coded by rarity), and the bonus each tier grants. Click any brainrot tag to jump straight to its entry.
@@ -17,11 +23,15 @@ Live at **[brainrot-info.com](https://brainrot-info.com)**
 
 ## Getting Started
 
+### Dependencies
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
 ```bash
 # Install dependencies
 npm install
 
-# Start dev server (http://localhost:5173)
+# Start dev server
 npm run dev
 
 # Production build → dist/
@@ -41,22 +51,3 @@ npm run preview
 The asset filename is derived automatically from the brainrot's `name` field in `data.json` — no code changes needed. Vite picks it up via `import.meta.glob` at build time.
 
 ---
-
-## Navigation Icons
-
-SVG icons for the sidebar nav live in `src/assets/` and are imported directly by `Sidebar.vue`:
-
-| File | Used for |
-|---|---|
-| `brainrot-icon.svg` | Brainrots page |
-| `rebirth-icon.svg` | Rebirth Guide |
-| `calculator-icon.svg` | Calculator |
-| `machine-icon.svg` | Eternal Machine |
-| `info-icon.svg` | About |
-| `arrow-icon.svg` | Sidebar expand/collapse toggle |
-
----
-
-## Custom Artwork — Coming Soon
-
-Original artwork for the brainrots is being created by **Andres D.** and will be added to the site over time. Art will be released in batches covering a few brainrots at a time, so expect new illustrations to appear gradually.
