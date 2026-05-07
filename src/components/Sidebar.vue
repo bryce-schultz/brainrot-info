@@ -19,7 +19,7 @@
             :class="{ active: currentPage === item.id }"
             @click.prevent="$emit('navigate', item.id)"
           >
-            <span class="nav-icon" :class="item.iconClass"></span>
+            <img :src="item.icon" :alt="item.text" class="nav-icon" />
             <span class="nav-text">{{ item.text }}</span>
           </a>
         </li>
@@ -30,6 +30,11 @@
 
 <script setup>
 import { ref } from 'vue';
+import brainrotIcon from '../assets/brainrot-icon.svg';
+import rebirthIcon from '../assets/rebirth-icon.svg';
+import calculatorIcon from '../assets/calculator-icon.svg';
+import machineIcon from '../assets/machine-icon.svg';
+import infoIcon from '../assets/info-icon.svg';
 
 defineProps({
   currentPage: {
@@ -43,11 +48,11 @@ defineEmits(['navigate']);
 const isExpanded = ref(false);
 
 const navItems = [
-  { id: 'brainrots', href: '#brainrots', text: 'Brainrots', iconClass: 'icon-brainrot' },
-  { id: 'rebirth', href: '#rebirth', text: 'Rebirth Guide', iconClass: 'icon-upgrade' },
-  { id: 'calculator', href: '#calculator', text: 'Calculator', iconClass: 'icon-calculator' },
-  { id: 'machine', href: '#machine', text: 'Eternal Machine', iconClass: 'icon-machine' },
-  { id: 'about', href: '#about', text: 'About', iconClass: 'icon-info' }
+  { id: 'brainrots', href: '#brainrots', text: 'Brainrots', icon: brainrotIcon },
+  { id: 'rebirth', href: '#rebirth', text: 'Rebirth Guide', icon: rebirthIcon },
+  { id: 'calculator', href: '#calculator', text: 'Calculator', icon: calculatorIcon },
+  { id: 'machine', href: '#machine', text: 'Eternal Machine', icon: machineIcon },
+  { id: 'about', href: '#about', text: 'About', icon: infoIcon }
 ];
 </script>
 

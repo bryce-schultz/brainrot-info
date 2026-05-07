@@ -178,11 +178,17 @@ body {
 .nav-link {
     display: flex;
     align-items: center;
-    padding: 14px 20px;
+    padding: 14px 18px;
+    width: 100%;
+    box-sizing: border-box;
     color: var(--text-secondary);
     text-decoration: none;
     transition: all 0.2s;
     white-space: nowrap;
+}
+
+#sidebar-toggle:checked ~ .sidebar .nav-link {
+    padding: 14px 20px;
 }
 
 .nav-link:hover {
@@ -197,9 +203,9 @@ body {
 }
 
 .nav-icon {
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
