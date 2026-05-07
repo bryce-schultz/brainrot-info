@@ -594,9 +594,9 @@ body {
 /* Rarity badge colors */
 .rarity-badge.rarity-common { background: #00ff88; color: var(--primary-bg); }
 .rarity-badge.rarity-rare { background: #4a9eff; color: var(--primary-bg); }
-.rarity-badge.rarity-epic { background: #a855f7; color: white; }
+.rarity-badge.rarity-epic { background: #7c3aed; color: white; }
 .rarity-badge.rarity-legendary { background: #fbbf24; color: var(--primary-bg); }
-.rarity-badge.rarity-mythic { background: #ef4444; color: white; }
+.rarity-badge.rarity-mythic { background: #b91c1c; color: white; }
 .rarity-badge.rarity-brainrotgod { background: #c084fc; color: var(--primary-bg); }
 .rarity-badge.rarity-secret { background: #f3f4f6; color: var(--primary-bg); }
 .rarity-badge.rarity-eternal { background: #991b1b; color: white; }

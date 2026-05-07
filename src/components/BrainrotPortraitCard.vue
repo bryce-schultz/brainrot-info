@@ -7,7 +7,7 @@
     <div class="portrait-image">
       <span v-if="!brainrot" class="portrait-empty-icon">+</span>
       <template v-else>
-        <img v-if="imgSrc" :src="imgSrc" :alt="brainrot.name" class="portrait-img" />
+        <img v-if="imgSrc" :src="imgSrc" alt="" class="portrait-img" />
         <span v-else>?</span>
       </template>
     </div>

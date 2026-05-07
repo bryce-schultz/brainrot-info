@@ -7,7 +7,7 @@
     <nav class="sidebar">
       <div class="sidebar-header">
         <label for="sidebar-toggle" class="toggle-btn">
-          <img :src="arrowIcon" alt="toggle" class="toggle-arrow" />
+          <img :src="arrowIcon" alt="" class="toggle-arrow" />
         </label>
         <div class="site-title">Brainrot Info</div>
       </div>
@@ -19,7 +19,7 @@
             :class="{ active: currentPage === item.id }"
             @click.prevent="$emit('navigate', item.id)"
           >
-            <img :src="item.icon" :alt="item.text" class="nav-icon" />
+            <img :src="item.icon" alt="" class="nav-icon" />
             <span class="nav-text">{{ item.text }}</span>
           </a>
         </li>

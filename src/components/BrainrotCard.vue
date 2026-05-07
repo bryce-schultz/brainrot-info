@@ -2,11 +2,11 @@
   <div class="brainrot-card" :class="`rarity-${brainrot.rarity?.toLowerCase() || 'common'}`">
     <div class="brainrot-content">
       <div class="brainrot-image">
-        <img v-if="imgSrc" :src="imgSrc" :alt="brainrot.name" class="brainrot-img" />
+        <img v-if="imgSrc" :src="imgSrc" alt="" class="brainrot-img" />
         <div v-else class="image-placeholder">?</div>
       </div>
       <div class="brainrot-info">
-        <h3 class="brainrot-name">{{ brainrot.name }}</h3>
+        <h2 class="brainrot-name">{{ brainrot.name }}</h2>
         <div class="brainrot-details">
           <div class="detail-row">
             <span class="detail-label">Rarity</span>
