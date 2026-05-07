@@ -1763,11 +1763,6 @@
     ],
     "traits": [
         {
-            "name": "Default",
-            "color": "#a8adb7",
-            "multiplier": 0
-        },
-        {
             "name": "Lightning",
             "color": "#fbbf24",
             "multiplier": 1.5

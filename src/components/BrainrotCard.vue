@@ -40,8 +40,7 @@ const props = defineProps({
   }
 });
 
-const imgSrc = computed(() => getBrainrotImage(props.brainrot.name));
-
+const imgSrc = computed(() => getBrainrotImage(props.brainrot.name, 'md'));
 
 </script>
 

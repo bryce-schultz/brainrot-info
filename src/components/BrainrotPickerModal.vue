@@ -40,7 +40,7 @@
 import { ref, computed, onMounted, nextTick } from 'vue';
 import { getBrainrotImage } from '../utils/brainrotImage.js';
 
-const getImage = (asset) => getBrainrotImage(asset);
+const getImage = (name) => getBrainrotImage(name, 'sm');
 
 const props = defineProps({
   brainrots: { type: Array, required: true },

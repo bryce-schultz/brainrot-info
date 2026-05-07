@@ -126,8 +126,8 @@
             :class="`rarity-${mergeResult.rarity?.toLowerCase()}`"
           >
             <img
-              v-if="getImage(mergeResult.name)"
-              :src="getImage(mergeResult.name)"
+              v-if="getImage(mergeResult.name, 'md')"
+              :src="getImage(mergeResult.name, 'md')"
               :alt="mergeResult.name"
               class="merge-result-img"
             />
@@ -170,7 +170,7 @@ const activePickerSlot = ref(-1);
 const mergeResult = ref(null);
 const luckEnabled = ref(false);
 
-const getImage = (asset) => getBrainrotImage(asset);
+const getImage = (name, size = 'sm') => getBrainrotImage(name, size);
 
 const eligibleBrainrots = computed(() =>
   props.brainrots.filter(b => MYTHIC_AND_ABOVE.has(b.rarity?.toLowerCase()))
