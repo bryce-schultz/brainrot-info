@@ -627,6 +627,12 @@
             "produces": 25000
         },
         {
+            "name": "Gorillari Altoparlanti",
+            "rarity": "Mythic",
+            "price": 14000000,
+            "produces": 26000
+        },
+        {
             "name": "Fishinis Santinis",
             "rarity": "Mythic",
             "price": 15000000,
@@ -1257,6 +1263,12 @@
             "produces": 9000000
         },
         {
+            "name": "Chickanini Bananini",
+            "rarity": "Secret",
+            "price": 3000000000,
+            "produces": 9000000
+        },
+        {
             "name": "Pingus Kingus",
             "rarity": "Secret",
             "price": 4200000000,
@@ -1357,6 +1369,12 @@
             "rarity": "Secret",
             "price": 7000000000,
             "produces": 15000000
+        },
+        {
+            "name": "Wolfito Micronodo",
+            "rarity": "Secret",
+            "price": 7500000000,
+            "produces": 15500000
         },
         {
             "name": "Aquanaut",
@@ -1609,6 +1627,12 @@
             "rarity": "Eternal",
             "price": 35000000000,
             "produces": 85000000
+        },
+        {
+            "name": "DiggoBlock",
+            "rarity": "Eternal",
+            "price": 140000000000,
+            "produces": 87000000
         },
         {
             "name": "Tiramisubmarini",
