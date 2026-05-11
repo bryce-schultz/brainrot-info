@@ -8,13 +8,24 @@
           <button class="picker-close" @click="$emit('close')">&times;</button>
         </div>
         <div class="picker-search">
-          <input
-            ref="searchInput"
-            v-model="search"
-            type="text"
-            placeholder="Search brainrots..."
-            class="search-input"
-          />
+          <div class="search-input-wrap">
+            <input
+              ref="searchInput"
+              v-model="search"
+              type="text"
+              placeholder="Search brainrots..."
+              class="search-input"
+            />
+            <button
+              v-if="search"
+              type="button"
+              class="search-clear-btn"
+              aria-label="Clear brainrot search"
+              @click="search = ''"
+            >
+              &times;
+            </button>
+          </div>
         </div>
         <div ref="pickerGrid" class="picker-grid">
           <button

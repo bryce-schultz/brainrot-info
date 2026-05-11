@@ -447,10 +447,17 @@ body {
     justify-content: center;
 }
 
-.search-input {
+.search-input-wrap {
+    position: relative;
     width: 100%;
     max-width: 500px;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 100%;
     padding: 12px 20px;
+    padding-right: 50px;
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     border-radius: 8px;
@@ -469,6 +476,46 @@ body {
     color: var(--text-secondary);
 }
 
+.search-clear-btn {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: #ef4444;
+    padding: 0;
+    font-size: 0;
+    line-height: 1;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-grid;
+    place-items: center;
+    z-index: 2;
+    opacity: 0.92;
+    transition: color 0.15s, opacity 0.15s, transform 0.15s;
+}
+
+.search-clear-btn::before {
+    content: '\00D7';
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    transform: translateY(-1px);
+}
+
+.search-clear-btn:hover {
+    color: #f87171;
+    opacity: 1;
+}
+
+.search-clear-btn:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
+}
+
 /* Brainrots Grid */
 .brainrots-grid {
     display: grid;
@@ -478,16 +525,27 @@ body {
 
 /* Brainrot Card */
 .brainrot-card {
+    appearance: none;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    width: 100%;
     background: var(--card-bg);
     border: 2px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     transition: all 0.2s;
+    cursor: pointer;
 }
 
 .brainrot-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.brainrot-card:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 /* Rarity-based border colors */
@@ -883,6 +941,98 @@ body {
     width: 100%;
 }
 
+/* Events Page */
+.events-page {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.event-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 217, 255, 0.1);
+}
+
+.event-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.event-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.event-detail-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.event-detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: right;
+}
+
+.event-reward {
+    color: var(--success-color);
+}
+
+.event-timer-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+.event-timer-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin: 0;
+}
+
+.event-timer {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--success-color);
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+}
+
+.event-timer.starting {
+    color: var(--accent-color);
+}
+
 /* About Page */
 .about-page {
     max-width: 72ch;
@@ -959,6 +1109,125 @@ body {
     line-height: 1;
 }
 
+/* Brainrot details modal */
+.brainrot-detail-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.brainrot-detail-modal {
+    position: relative;
+    width: min(980px, 100%);
+    background: var(--secondary-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+
+.brainrot-detail-modal.rarity-common { border-color: #00ff88; }
+.brainrot-detail-modal.rarity-rare { border-color: #4a9eff; }
+.brainrot-detail-modal.rarity-epic { border-color: #a855f7; }
+.brainrot-detail-modal.rarity-legendary { border-color: #fbbf24; }
+.brainrot-detail-modal.rarity-mythic { border-color: #ef4444; }
+.brainrot-detail-modal.rarity-brainrotgod { border-color: #c084fc; }
+.brainrot-detail-modal.rarity-secret { border-color: #f3f4f6; }
+.brainrot-detail-modal.rarity-eternal { border-color: #991b1b; }
+.brainrot-detail-modal.rarity-goat { border-color: #00d9ff; }
+
+.brainrot-detail-close {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.brainrot-detail-close:hover {
+    color: var(--text-primary);
+}
+
+.brainrot-detail-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.brainrot-detail-image-wrap {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.brainrot-detail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brainrot-detail-placeholder {
+    font-size: 76px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.brainrot-detail-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.brainrot-detail-title {
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 1.15;
+    margin: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.brainrot-detail-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 0;
+}
+
+.brainrot-detail-stats {
+    display: grid;
+    gap: 10px;
+}
+
+.brainrot-detail-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
 /* ── Picker modal & overlay ──────────────────────── */
 .picker-overlay {
     position: fixed;
@@ -1024,6 +1293,10 @@ body {
     max-width: 100%;
 }
 
+.picker-search .search-input-wrap {
+    max-width: 100%;
+}
+
 .picker-grid {
     display: flex;
     flex-wrap: wrap;
@@ -1059,6 +1332,14 @@ body {
         aspect-ratio: 1 / 1;
         height: auto;
         margin: 0 auto;
+    }
+
+    .brainrot-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .brainrot-detail-title {
+        font-size: 28px;
     }
 }
 
@@ -1130,6 +1411,31 @@ body {
 
     .picker-grid {
         padding: 4px 12px 32px;
+    }
+
+    .brainrot-detail-overlay {
+        padding: 8px;
+        align-items: center;
+    }
+
+    .brainrot-detail-modal {
+        width: min(560px, 100%);
+        border-radius: 18px;
+        padding: 18px 14px 22px;
+        max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 18px);
+    }
+
+    .brainrot-detail-image-wrap {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .event-title {
+        font-size: 20px;
+    }
+
+    .event-timer {
+        font-size: 24px;
     }
 }
 

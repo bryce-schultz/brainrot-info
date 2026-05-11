@@ -34,6 +34,7 @@ import brainrotIcon from '../assets/brainrot-icon.svg';
 import rebirthIcon from '../assets/rebirth-icon.svg';
 import calculatorIcon from '../assets/calculator-icon.svg';
 import machineIcon from '../assets/machine-icon.svg';
+import eventsIcon from '../assets/events-icon.svg';
 import infoIcon from '../assets/info-icon.svg';
 import arrowIcon from '../assets/arrow-icon.svg';
 
@@ -53,6 +54,7 @@ const navItems = [
   { id: 'rebirth', href: '#rebirth', text: 'Rebirth Guide', icon: rebirthIcon },
   { id: 'calculator', href: '#calculator', text: 'Calculator', icon: calculatorIcon },
   { id: 'machine', href: '#machine', text: 'Eternal Machine', icon: machineIcon },
+  { id: 'events', href: '#events', text: 'Events', icon: eventsIcon },
   { id: 'about', href: '#about', text: 'About', icon: infoIcon }
 ];
 

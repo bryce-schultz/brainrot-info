@@ -12,20 +12,37 @@
       <!-- Brainrots Page -->
       <div v-if="currentPage === 'brainrots'">
         <div class="search-container">
-          <input 
-            type="text" 
-            v-model="searchTerm" 
-            placeholder="Search"
-            class="search-input"
-          />
+          <div class="search-input-wrap">
+            <input 
+              type="text" 
+              v-model="searchTerm" 
+              placeholder="Search"
+              class="search-input"
+            />
+            <button
+              v-if="searchTerm"
+              type="button"
+              class="search-clear-btn"
+              aria-label="Clear search"
+              @click="searchTerm = ''"
+            >
+              &times;
+            </button>
+          </div>
         </div>
         <div class="brainrots-grid">
           <BrainrotCard 
             v-for="brainrot in filteredBrainrots" 
             :key="brainrot.name" 
             :brainrot="brainrot" 
+            @select="openBrainrotDetails"
           />
         </div>
+        <BrainrotDetailModal
+          v-if="selectedBrainrot"
+          :brainrot="selectedBrainrot"
+          @close="closeBrainrotDetails"
+        />
       </div>
 
       <!-- Rebirth Guide Page -->
@@ -54,6 +71,32 @@
           :brainrots="brainrotsData"
           :machine="machineData"
         />
+      </div>
+
+      <!-- Events Page -->
+      <div v-else-if="currentPage === 'events'" class="events-page">
+        <div v-if="currentEvents.length === 0" class="content-placeholder">
+          There are currently no events in Steal the Brainrot. Check back on Fridays for weekend Admin Abuse event info.
+        </div>
+        <div v-else class="events-grid">
+          <article
+            v-for="event in currentEvents"
+            :key="event.id"
+            class="event-card"
+          >
+            <h2 class="event-title">{{ event.title }}</h2>
+
+            <div class="event-detail-row">
+              <span class="event-detail-label">Reward</span>
+              <span class="event-detail-value event-reward">{{ event.reward }}</span>
+            </div>
+
+            <div class="event-timer-block">
+              <p class="event-timer-label">{{ getEventTimerLabel(event) }}</p>
+              <p class="event-timer" :class="{ starting: isEventStarting(event) }">{{ getEventTimerValue(event) }}</p>
+            </div>
+          </article>
+        </div>
       </div>
 
       <!-- About Page -->
@@ -97,6 +140,7 @@ import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
 import Sidebar from './components/Sidebar.vue';
 import RebirthCard from './components/RebirthCard.vue';
 import BrainrotCard from './components/BrainrotCard.vue';
+import BrainrotDetailModal from './components/BrainrotDetailModal.vue';
 import Calculator from './components/Calculator.vue';
 import Machine from './components/Machine.vue';
 import { trackAdsEvent, trackAdsConversion } from './utils/adsTracking.js';
@@ -107,12 +151,17 @@ const brainrotsData = ref([]);
 const typesData = ref([]);
 const traitsData = ref([]);
 const machineData = ref(null);
+const eventsData = ref([]);
 const searchTerm = ref('');
 const lastTrackedSearch = ref('');
+const nowTimestamp = ref(Date.now());
+const selectedBrainrot = ref(null);
 let searchConversionTimer = null;
+let eventTimerInterval = null;
+let lockedScrollY = 0;
 
 // Whitelist of valid page IDs — any unrecognised hash falls back to 'rebirth'.
-const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'about']);
+const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'events', 'about']);
 
 const parseHash = () => {
   const hash = window.location.hash.slice(1);
@@ -148,6 +197,7 @@ const pageTitle = computed(() => {
     calculator: 'Calculator',
     brainrots: 'Brainrots',
     machine: 'Eternal Machine',
+    events: 'Events',
     about: 'About'
   };
   return titles[currentPage.value] || 'Rebirth Guide';
@@ -159,6 +209,7 @@ const pageSubtitle = computed(() => {
     calculator: 'Estimate production and compare options with the unofficial calculator.',
     brainrots: 'Browse the current brainrot list with rarity, cost, and production details.',
     machine: 'Simulate the Eternal Machine — pick 5 Mythic+ brainrots and see what you could get.',
+    events: 'Track active and upcoming in-game events in your local timezone.',
     about: ''
   };
   return subtitles[currentPage.value] || '';
@@ -189,6 +240,74 @@ const filteredBrainrots = computed(() => {
   );
 });
 
+const parseEventDate = (value) => {
+  if (!value) return null;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+};
+
+const formatCountdown = (msRemaining) => {
+  const safeMs = Math.max(0, msRemaining);
+  const totalSeconds = Math.floor(safeMs / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  const hh = String(hours).padStart(2, '0');
+  const mm = String(minutes).padStart(2, '0');
+  const ss = String(seconds).padStart(2, '0');
+
+  if (days > 0) {
+    return `${days}d ${hh}:${mm}:${ss}`;
+  }
+
+  return `${hh}:${mm}:${ss}`;
+};
+
+const currentEvents = computed(() => {
+  const now = nowTimestamp.value;
+
+  return eventsData.value
+    .map((event, index) => {
+      const title = (event.title || event.name || '').trim() || 'Untitled Event';
+      const reward = (event.reward || '').trim() || 'TBA';
+      const startAt = parseEventDate(event.start);
+      const endAt = parseEventDate(event.end);
+
+      return {
+        id: `${title}-${event.start || index}`,
+        title,
+        reward,
+        startAt,
+        endAt
+      };
+    })
+    .filter((event) => !event.endAt || event.endAt.getTime() > now);
+});
+
+const isEventStarting = (event) => (
+  Boolean(event.startAt) && nowTimestamp.value < event.startAt.getTime()
+);
+
+const getEventTimerLabel = (event) => (
+  isEventStarting(event) ? 'Event starting in' : 'Event ends in'
+);
+
+const getEventTimerValue = (event) => {
+  const now = nowTimestamp.value;
+
+  if (isEventStarting(event)) {
+    return formatCountdown(event.startAt.getTime() - now);
+  }
+
+  if (event.endAt) {
+    return formatCountdown(event.endAt.getTime() - now);
+  }
+
+  return 'TBA';
+};
+
 const navigate = (pageId, search = '') => {
   const query = search ? `?q=${encodeURIComponent(search)}` : '';
   const hash = `#${pageId}${query}`;
@@ -207,6 +326,40 @@ const handleBrainrotSearch = (name) => {
   const brainrot = brainrotsData.value.find(b => b.name === name);
   const query = brainrot ? `#${brainrot.id}` : name;
   navigate('brainrots', query);
+};
+
+const openBrainrotDetails = (brainrot) => {
+  selectedBrainrot.value = brainrot;
+};
+
+const closeBrainrotDetails = () => {
+  selectedBrainrot.value = null;
+};
+
+const lockBodyScroll = () => {
+  if (document.body.style.position === 'fixed') return;
+  lockedScrollY = window.scrollY || window.pageYOffset || 0;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${lockedScrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.width = '100%';
+};
+
+const unlockBodyScroll = () => {
+  if (document.body.style.position !== 'fixed') return;
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  document.body.style.width = '';
+  window.scrollTo(0, lockedScrollY);
+};
+
+const handleKeydown = (event) => {
+  if (event.key === 'Escape' && selectedBrainrot.value) {
+    closeBrainrotDetails();
+  }
 };
 
 const handleGithubClick = () => {
@@ -241,7 +394,26 @@ const trackSearchConversion = (rawSearch) => {
 
 watch(currentPage, (pageId) => {
   window.scrollTo(0, 0);
+  if (pageId !== 'brainrots') {
+    closeBrainrotDetails();
+  }
   trackPageConversions(pageId);
+});
+
+watch(filteredBrainrots, (brainrots) => {
+  if (!selectedBrainrot.value) return;
+  const stillVisible = brainrots.some((brainrot) => brainrot.name === selectedBrainrot.value.name);
+  if (!stillVisible) {
+    closeBrainrotDetails();
+  }
+});
+
+watch(selectedBrainrot, (brainrot) => {
+  if (brainrot) {
+    lockBodyScroll();
+  } else {
+    unlockBodyScroll();
+  }
 });
 
 watch(searchTerm, (value) => {
@@ -258,6 +430,10 @@ onMounted(async () => {
   applyHash();
   trackPageConversions(currentPage.value);
   window.addEventListener('popstate', applyHash);
+  window.addEventListener('keydown', handleKeydown);
+  eventTimerInterval = window.setInterval(() => {
+    nowTimestamp.value = Date.now();
+  }, 1000);
 
   // Helper — fetch JSON and surface non-2xx as a rejection so allSettled catches it.
   const fetchJson = async (url) => {
@@ -275,6 +451,7 @@ onMounted(async () => {
     typesData.value = Array.isArray(data.types) ? data.types : [];
     traitsData.value = Array.isArray(data.traits) ? data.traits : [];
     machineData.value = data.machine ?? null;
+    eventsData.value = Array.isArray(data.events) ? data.events : [];
   } catch (error) {
     console.error('Error loading site data:', error);
   }
@@ -282,8 +459,13 @@ onMounted(async () => {
 
 onUnmounted(() => {
   window.removeEventListener('popstate', applyHash);
+  window.removeEventListener('keydown', handleKeydown);
+  unlockBodyScroll();
   if (searchConversionTimer) {
     clearTimeout(searchConversionTimer);
+  }
+  if (eventTimerInterval) {
+    clearInterval(eventTimerInterval);
   }
 });
 </script>

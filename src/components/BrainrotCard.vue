@@ -1,5 +1,11 @@
 <template>
-  <div class="brainrot-card" :class="`rarity-${brainrot.rarity?.toLowerCase() || 'common'}`">
+  <button
+    type="button"
+    class="brainrot-card"
+    :class="`rarity-${brainrot.rarity?.toLowerCase() || 'common'}`"
+    @click="$emit('select', brainrot)"
+    :aria-label="`View details for ${brainrot.name}`"
+  >
     <div class="brainrot-content">
       <div class="brainrot-image">
         <img v-if="imgSrc" :src="imgSrc" alt="" class="brainrot-img" />
@@ -25,7 +31,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </button>
 </template>
 
 <script setup>
@@ -39,6 +45,8 @@ const props = defineProps({
     required: true
   }
 });
+
+defineEmits(['select']);
 
 const imgSrc = computed(() => getBrainrotImage(props.brainrot.name, 'md'));
 

@@ -1681,6 +1681,70 @@
             "rarity": "Goat",
             "price": 1000000000000,
             "produces": 350000000
+        },
+        {
+            "name": "Ferinsini Luckini",
+            "rarity": "Admin",
+            "price": 0,
+            "produces": 0
+        },
+        {
+            "name": "Clove Clove Clove Sahur",
+            "rarity": "Admin",
+            "price": 0,
+            "produces": 0
+        },
+        {
+            "name": "Trifoglita Bicicleta",
+            "rarity": "Admin",
+            "price": 0,
+            "produces": 0
+        }
+    ],
+    "special": [
+        {
+            "name": "Ferinsini Luckini",
+            "rarity": "Admin",
+            "price": 1200000000000,
+            "reward": [
+                {
+                    "group": [
+                        {
+                            "type": "luck",
+                            "value": 2,
+                            "duration": 600,
+                            "chance": 0.7
+                        },
+                        {
+                            "type": "luck",
+                            "value": 4,
+                            "duration": 600,
+                            "chance": 0.25
+                        },
+                        {
+                            "type": "luck",
+                            "value": 10,
+                            "duration": 300,
+                            "chance": 0.05  
+                        }
+                    ],
+                    "chance": 0.95
+                },
+                {
+                    "group": [
+                        {
+                            "type": "brainrot",
+                            "name": "Clove Clove Clove Sahur",
+                            "chance": 0.8
+                        },
+                        {
+                            "type": "brainrot",
+                            "name": "Trifoglita Bicicleta",
+                            "chance": 0.2
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "types": [
@@ -2578,5 +2642,13 @@
                 "Tralaledon"
             ]
         }
-    }
+    },
+    "events": [
+        {
+            "name": "Admin Abuse",
+            "start": "2026-05-10T12:00:00",
+            "end": "2026-05-10T16:00:00",
+            "reward": "Gaurenteed Secret"
+        }
+    ]
 }
