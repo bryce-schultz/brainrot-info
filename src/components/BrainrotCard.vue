@@ -20,14 +20,16 @@
               {{ brainrot.rarity || 'Common' }}
             </span>
           </div>
-          <div class="detail-row">
-            <span class="detail-label">Cost</span>
-            <span class="detail-value cost">{{ formatCash(brainrot.price) }}</span>
-          </div>
-          <div class="detail-row">
-            <span class="detail-label">Production</span>
-            <span class="detail-value production">{{ formatCash(brainrot.produces) }}/s</span>
-          </div>
+          <template v-if="hasEconomyStats">
+            <div class="detail-row">
+              <span class="detail-label">Cost</span>
+              <span class="detail-value cost">{{ formatCash(brainrot.price) }}</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Production</span>
+              <span class="detail-value production">{{ formatCash(brainrot.produces) }}/s</span>
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -49,6 +51,7 @@ const props = defineProps({
 defineEmits(['select']);
 
 const imgSrc = computed(() => getBrainrotImage(props.brainrot.name, 'md'));
+const hasEconomyStats = computed(() => !(Number(props.brainrot.price) === 0 && Number(props.brainrot.produces) === 0));
 
 </script>
 

@@ -23,14 +23,16 @@
             </div>
 
             <div class="brainrot-detail-stats">
-              <div class="brainrot-detail-stat">
-                <span class="detail-label">Cost</span>
-                <span class="detail-value cost">{{ formatCash(brainrot.price) }}</span>
-              </div>
-              <div class="brainrot-detail-stat">
-                <span class="detail-label">Production</span>
-                <span class="detail-value production">{{ formatCash(brainrot.produces) }}/s</span>
-              </div>
+              <template v-if="hasEconomyStats">
+                <div class="brainrot-detail-stat">
+                  <span class="detail-label">Cost</span>
+                  <span class="detail-value cost">{{ formatCash(brainrot.price) }}</span>
+                </div>
+                <div class="brainrot-detail-stat">
+                  <span class="detail-label">Production</span>
+                  <span class="detail-value production">{{ formatCash(brainrot.produces) }}/s</span>
+                </div>
+              </template>
               <div class="brainrot-detail-stat" v-if="brainrot.id">
                 <span class="detail-label">Search Tag</span>
                 <span class="detail-value">#{{ brainrot.id }}</span>
@@ -58,4 +60,5 @@ const props = defineProps({
 defineEmits(['close']);
 
 const imgSrc = computed(() => getBrainrotImage(props.brainrot?.name, 'full'));
+const hasEconomyStats = computed(() => !(Number(props.brainrot.price) === 0 && Number(props.brainrot.produces) === 0));
 </script>
