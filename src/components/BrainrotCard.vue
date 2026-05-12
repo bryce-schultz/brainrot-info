@@ -8,7 +8,16 @@
   >
     <div class="brainrot-content">
       <div class="brainrot-image">
-        <img v-if="imgSrc" :src="imgSrc" alt="" class="brainrot-img" />
+        <img
+          v-if="imgSrc"
+          :src="imgSrc"
+          alt=""
+          class="brainrot-img"
+          loading="lazy"
+          decoding="async"
+          width="256"
+          height="256"
+        />
         <div v-else class="image-placeholder">?</div>
       </div>
       <div class="brainrot-info">

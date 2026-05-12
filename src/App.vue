@@ -136,14 +136,15 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch, defineAsyncComponent } from 'vue';
 import Sidebar from './components/Sidebar.vue';
-import RebirthCard from './components/RebirthCard.vue';
 import BrainrotCard from './components/BrainrotCard.vue';
-import BrainrotDetailModal from './components/BrainrotDetailModal.vue';
-import Calculator from './components/Calculator.vue';
-import Machine from './components/Machine.vue';
-import { trackAdsEvent, trackAdsConversion } from './utils/adsTracking.js';
+import { trackAdsEvent, trackAdsConversion, primeAdsTracking } from './utils/adsTracking.js';
+
+const RebirthCard = defineAsyncComponent(() => import('./components/RebirthCard.vue'));
+const BrainrotDetailModal = defineAsyncComponent(() => import('./components/BrainrotDetailModal.vue'));
+const Calculator = defineAsyncComponent(() => import('./components/Calculator.vue'));
+const Machine = defineAsyncComponent(() => import('./components/Machine.vue'));
 
 const currentPage = ref('brainrots');
 const rebirthData = ref([]);
@@ -216,29 +217,22 @@ const pageSubtitle = computed(() => {
 });
 
 const filteredBrainrots = computed(() => {
-  // Exclude placeholder entries used for unreleased brainrots.
-  const visibleBrainrots = brainrotsData.value.filter(brainrot =>
-    brainrot.name !== '???'
-  );
-  
-  if (!searchTerm.value) {
-    return visibleBrainrots;
+  const all = brainrotsData.value.filter(b => b.name !== '???');
+  const q = searchTerm.value.trim();
+  if (!q) return all;
+
+  if (q.startsWith('#')) {
+    const id = parseInt(q.slice(1), 10);
+    if (!isNaN(id)) return all.filter(b => b.id === id);
   }
 
-  // #<id> prefix: exact match by numeric ID
-  if (searchTerm.value.startsWith('#')) {
-    const id = parseInt(searchTerm.value.slice(1), 10);
-    if (!isNaN(id)) {
-      return visibleBrainrots.filter(brainrot => brainrot.id === id);
-    }
-  }
-  
-  const search = searchTerm.value.toLowerCase();
-  return visibleBrainrots.filter(brainrot => 
-    brainrot.name.toLowerCase().includes(search) ||
-    brainrot.rarity?.toLowerCase().includes(search)
+  const lower = q.toLowerCase();
+  return all.filter(b =>
+    b.name.toLowerCase().includes(lower) ||
+    b.rarity?.toLowerCase().includes(lower)
   );
 });
+
 
 const parseEventDate = (value) => {
   if (!value) return null;
@@ -324,8 +318,7 @@ const handleNavigate = (pageId) => {
 
 const handleBrainrotSearch = (name) => {
   const brainrot = brainrotsData.value.find(b => b.name === name);
-  const query = brainrot ? `#${brainrot.id}` : name;
-  navigate('brainrots', query);
+  navigate('brainrots', brainrot ? `#${brainrot.id}` : name);
 };
 
 const openBrainrotDetails = (brainrot) => {
@@ -427,6 +420,7 @@ watch(searchTerm, (value) => {
 });
 
 onMounted(async () => {
+  primeAdsTracking();
   applyHash();
   trackPageConversions(currentPage.value);
   window.addEventListener('popstate', applyHash);
@@ -469,8 +463,3 @@ onUnmounted(() => {
   }
 });
 </script>
-
-<style>
-/* Import global styles */
-@import './style.css';
-</style>

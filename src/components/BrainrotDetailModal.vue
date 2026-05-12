@@ -8,7 +8,16 @@
 
         <div class="brainrot-detail-layout">
           <div class="brainrot-detail-image-wrap">
-            <img v-if="imgSrc" :src="imgSrc" alt="" class="brainrot-detail-image" />
+            <img
+              v-if="imgSrc"
+              :src="imgSrc"
+              alt=""
+              class="brainrot-detail-image"
+              loading="eager"
+              decoding="async"
+              width="512"
+              height="512"
+            />
             <div v-else class="brainrot-detail-placeholder">?</div>
           </div>
 
