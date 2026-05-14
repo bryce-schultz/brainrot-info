@@ -153,7 +153,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import { formatCash } from '../utils/formatCash.js';
+import { formatCash } from '../utils/formatter.js';
 import { getBrainrotImage } from '../utils/brainrotImage.js';
 import BrainrotPortraitCard from './BrainrotPortraitCard.vue';
 import BrainrotPickerModal from './BrainrotPickerModal.vue';

@@ -248,15 +248,12 @@ const formatCountdown = (msRemaining) => {
   const minutes = Math.floor((totalSeconds % 3600) / 60);
   const seconds = totalSeconds % 60;
 
-  const hh = String(hours).padStart(2, '0');
-  const mm = String(minutes).padStart(2, '0');
-  const ss = String(seconds).padStart(2, '0');
+  const parts = [];
+  if (days > 0) parts.push(`${days}d`);
+  if (hours > 0) parts.push(`${hours}h`);
+  if (minutes > 0 || parts.length === 0) parts.push(`${minutes}m`);
 
-  if (days > 0) {
-    return `${days}d ${hh}:${mm}:${ss}`;
-  }
-
-  return `${hh}:${mm}:${ss}`;
+  return parts.join(' ');
 };
 
 const currentEvents = computed(() => {

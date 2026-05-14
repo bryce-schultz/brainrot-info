@@ -29,7 +29,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { formatCash } from '../utils/formatCash.js';
+import { formatCash } from '../utils/formatter.js';
 
 const props = defineProps({
   tier: {

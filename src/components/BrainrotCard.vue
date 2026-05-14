@@ -47,7 +47,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { formatCash } from '../utils/formatCash.js';
+import { formatCash } from '../utils/formatter.js';
 import { getBrainrotImage } from '../utils/brainrotImage.js';
 
 const props = defineProps({

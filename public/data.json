@@ -2634,8 +2634,14 @@
     "events": [
         {
             "name": "Admin Abuse",
-            "start": "2026-05-10T12:00:00",
-            "end": "2026-05-10T16:00:00",
+            "start": "2026-05-16T07:19:00",
+            "end": "2026-05-16T08:19:00",
+            "reward": "Gaurenteed Secret"
+        },
+        {
+            "name": "Admin Abuse",
+            "start": "2026-05-17T07:19:00",
+            "end": "2026-05-17T08:19:00",
             "reward": "Gaurenteed Secret"
         }
     ]
