@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Ferinsini Luckini",
+    "rarity": "Admin",
+    "price": 1200000000000,
+    "reward": [
+      {
+        "group": [
+          {
+            "type": "luck",
+            "value": 2,
+            "duration": 600,
+            "chance": 0.7
+          },
+          {
+            "type": "luck",
+            "value": 4,
+            "duration": 600,
+            "chance": 0.25
+          },
+          {
+            "type": "luck",
+            "value": 10,
+            "duration": 300,
+            "chance": 0.05
+          }
+        ],
+        "chance": 0.95
+      },
+      {
+        "group": [
+          {
+            "type": "brainrot",
+            "name": "Clove Clove Clove Sahur",
+            "chance": 0.8
+          },
+          {
+            "type": "brainrot",
+            "name": "Trifoglita Bicicleta",
+            "chance": 0.2
+          }
+        ]
+      }
+    ]
+  }
+]

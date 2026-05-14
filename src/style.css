@@ -993,6 +993,10 @@ body {
 }
 
 .event-card {
+    appearance: none;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
@@ -1001,12 +1005,19 @@ body {
     flex-direction: column;
     gap: 18px;
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    width: 100%;
 }
 
 .event-card:hover {
     border-color: var(--accent-color);
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 217, 255, 0.1);
+}
+
+.event-card:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
 .event-title {
@@ -1071,7 +1082,78 @@ body {
     color: var(--accent-color);
 }
 
-/* About Page */
+/* Event detail modal */
+.event-detail-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.event-detail-modal {
+    position: relative;
+    width: min(500px, 100%);
+    background: var(--secondary-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 20px;
+    padding: 32px 28px 28px;
+    max-height: calc(100dvh - 48px);
+    overflow-y: auto;
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.event-detail-close {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    border: none;
+    background: none;
+    color: var(--text-secondary);
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.event-detail-close:hover {
+    color: var(--text-primary);
+}
+
+.event-detail-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    padding-right: 32px;
+}
+
+.event-detail-stats {
+    display: grid;
+    gap: 12px;
+}
+
+.event-detail-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+}
+
+.event-detail-timer-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-color);
+}
 .about-page {
     max-width: 72ch;
     display: flex;
