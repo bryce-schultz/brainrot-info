@@ -49,8 +49,10 @@
           @click="toggleTrait(trait)"
         >
           <div class="tile-image">
-            <span class="tile-mult">+{{ trait.multiplier }}</span>
+            <img v-if="getTraitImage(trait.name)" :src="getTraitImage(trait.name)" :alt="trait.name" class="tile-img" />
+            <span v-else class="tile-mult">+{{ trait.multiplier }}</span>
           </div>
+          <span class="tile-mult">+{{ trait.multiplier }}</span>
           <span class="tile-name">{{ trait.name }}</span>
         </button>
       </div>
@@ -76,6 +78,7 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
 import { formatCash } from '../utils/formatter.js';
+import { getTraitImage } from '../utils/brainrotImage.js';
 import BrainrotPortraitCard from './BrainrotPortraitCard.vue';
 import BrainrotPickerModal from './BrainrotPickerModal.vue';
 

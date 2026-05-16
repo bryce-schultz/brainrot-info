@@ -26,3 +26,14 @@ export const getBrainrotImage = (name, size = 'full') => {
   if (size === 'md')  return mediumModules[key] ?? fullModules[key] ?? null;
   return fullModules[key] ?? null;
 };
+
+/**
+ * Returns the image URL for a trait icon.
+ * Trait PNGs are small so we reuse the thumb (128px WebP) with a PNG fallback.
+ * @param {string} name - The trait's display name (e.g. "Lightning").
+ */
+export const getTraitImage = (name) => {
+  if (!name) return null;
+  const key = `/src/assets/${name.toLowerCase()}.png`;
+  return thumbModules[key] ?? fullModules[key] ?? null;
+};
