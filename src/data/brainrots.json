@@ -1014,6 +1014,12 @@
     "produces": 5500000
   },
   {
+    "name": "Croakolini Spellini",
+    "rarity": "Secret",
+    "price": 1200000000,
+    "produces": 5600000
+  },
+  {
     "name": "Clove Clove Clove Sahur",
     "rarity": "Secret",
     "price": 1300000000,
@@ -1114,6 +1120,12 @@
     "rarity": "Secret",
     "price": 3000000000,
     "produces": 9000000
+  },
+  {
+    "name": "Flowerfang Squirreli",
+    "rarity": "Secret",
+    "price": 2700000000,
+    "produces": 9300000
   },
   {
     "name": "Pingus Kingus",
@@ -1228,6 +1240,12 @@
     "rarity": "Secret",
     "price": 6500000000,
     "produces": 16000000
+  },
+  {
+    "name": "Mushzilla Fungzilla",
+    "rarity": "Secret",
+    "price": 7000000000,
+    "produces": 16500000
   },
   {
     "name": "Lirili Ralilu",
@@ -1356,6 +1374,12 @@
     "produces": 33000000
   },
   {
+    "name": "Mistifly",
+    "rarity": "Secret",
+    "price": 14000000000,
+    "produces": 34000000
+  },
+  {
     "name": "Shtekerito el Bulbonito",
     "rarity": "Secret",
     "price": 14000000000,
@@ -1426,6 +1450,12 @@
     "rarity": "Secret",
     "price": 100000000000,
     "produces": 50000000
+  },
+  {
+    "name": "Guardilope Antilope",
+    "rarity": "Secret",
+    "price": 29000000000,
+    "produces": 55000000
   },
   {
     "name": "Vulturino Skeletono",
@@ -1532,7 +1562,7 @@
   {
     "name": "Ferinsini Luckini",
     "rarity": "Admin",
-    "price": 0,
+    "price": 100000000,
     "produces": 0
   }
 ]

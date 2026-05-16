@@ -36,6 +36,10 @@
         v-else-if="currentPage === 'events'"
         :events="eventsData"
       />
+      <CodesPage
+        v-else-if="currentPage === 'codes'"
+        :codes="codesData"
+      />
       <AboutPage v-else-if="currentPage === 'about'" />
     </main>
   </div>
@@ -51,6 +55,7 @@ const RebirthPage   = defineAsyncComponent(() => import('./components/RebirthPag
 const Calculator    = defineAsyncComponent(() => import('./components/Calculator.vue'));
 const Machine       = defineAsyncComponent(() => import('./components/Machine.vue'));
 const EventsPage    = defineAsyncComponent(() => import('./components/EventsPage.vue'));
+const CodesPage     = defineAsyncComponent(() => import('./components/CodesPage.vue'));
 const AboutPage     = defineAsyncComponent(() => import('./components/AboutPage.vue'));
 
 const currentPage = ref('brainrots');
@@ -60,12 +65,13 @@ const typesData = ref([]);
 const traitsData = ref([]);
 const machineData = ref(null);
 const eventsData = ref([]);
+const codesData = ref([]);
 const searchTerm = ref('');
 const lastTrackedSearch = ref('');
 let searchConversionTimer = null;
 
 // Whitelist of valid page IDs — any unrecognised hash falls back to 'brainrots'.
-const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'events', 'about']);
+const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'events', 'codes', 'about']);
 
 const parseHash = () => {
   const hash = window.location.hash.slice(1);
@@ -102,6 +108,7 @@ const pageTitle = computed(() => {
     brainrots: 'Brainrots',
     machine: 'Eternal Machine',
     events: 'Events',
+    codes: 'Codes',
     about: 'About'
   };
   return titles[currentPage.value] || 'Rebirth Guide';
@@ -114,6 +121,7 @@ const pageSubtitle = computed(() => {
     brainrots: 'Browse the current brainrot list with rarity, cost, and production details.',
     machine: 'Simulate the Eternal Machine — pick 5 Mythic+ brainrots and see what you could get.',
     events: 'Track active and upcoming in-game events in your local timezone.',
+    codes: 'Redeem these codes in-game for free rewards.',
     about: ''
   };
   return subtitles[currentPage.value] || '';
@@ -199,6 +207,7 @@ onMounted(async () => {
     traitsData.value = Array.isArray(data.traits) ? data.traits : [];
     machineData.value = data.machine ?? null;
     eventsData.value = Array.isArray(data.events) ? data.events : [];
+    codesData.value = Array.isArray(data.codes) ? data.codes : [];
   } catch (error) {
     console.error('Error loading site data:', error);
   }

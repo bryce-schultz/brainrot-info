@@ -35,6 +35,7 @@ import rebirthIcon from '../assets/rebirth-icon.svg';
 import calculatorIcon from '../assets/calculator-icon.svg';
 import machineIcon from '../assets/machine-icon.svg';
 import eventsIcon from '../assets/events-icon.svg';
+import codesIcon from '../assets/codes-icon.svg';
 import infoIcon from '../assets/info-icon.svg';
 import arrowIcon from '../assets/arrow-icon.svg';
 
@@ -55,6 +56,7 @@ const navItems = [
   { id: 'calculator', href: '#calculator', text: 'Calculator', icon: calculatorIcon },
   { id: 'machine', href: '#machine', text: 'Eternal Machine', icon: machineIcon },
   { id: 'events', href: '#events', text: 'Events', icon: eventsIcon },
+  { id: 'codes', href: '#codes', text: 'Codes', icon: codesIcon },
   { id: 'about', href: '#about', text: 'About', icon: infoIcon }
 ];
 

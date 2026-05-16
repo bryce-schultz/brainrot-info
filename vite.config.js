@@ -19,6 +19,7 @@ export default defineConfig({
         traits:    'src/data/traits.json',
         machine:   'src/data/machine.json',
         events:    'src/data/events.json',
+        codes:     'src/data/codes.json',
       },
     }),
   ],

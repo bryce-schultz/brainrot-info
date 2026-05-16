@@ -231,11 +231,56 @@ const getOptionChance = (opt) => {
   return Number.isFinite(baseChance) ? baseChance : 0;
 };
 
+// Special replacement rules: active when the required brainrots are in the slots.
+const machineReplacements = computed(() => props.machine?.replacements ?? []);
+
+const activeReplacements = computed(() => {
+  const slotCounts = {};
+  for (const b of slots.value) {
+    if (b) slotCounts[b.name] = (slotCounts[b.name] ?? 0) + 1;
+  }
+  return machineReplacements.value.filter(rule => {
+    const reqCounts = {};
+    for (const name of rule.requirement) {
+      reqCounts[name] = (reqCounts[name] ?? 0) + 1;
+    }
+    return Object.entries(reqCounts).every(([name, count]) => (slotCounts[name] ?? 0) >= count);
+  });
+});
+
+// Apply active replacements to a threshold's options list.
+const applyReplacements = (options) => {
+  if (!activeReplacements.value.length) return options;
+  return options.map(opt => {
+    for (const rule of activeReplacements.value) {
+      const { replaces, replacement } = rule;
+      const matchesBrainrot = replaces.brainrot != null && opt.brainrot === replaces.brainrot;
+      const matchesGroup = replaces.group != null && String(opt.group) === String(replaces.group);
+      if (!matchesBrainrot && !matchesGroup) continue;
+      // Single replacement item → brainrot; multiple → inline group.
+      if (replacement.length === 1) {
+        const { group: _g, ...rest } = opt;
+        return { ...rest, brainrot: replacement[0] };
+      } else {
+        const { brainrot: _b, ...rest } = opt;
+        return { ...rest, group: replacement };
+      }
+    }
+    return opt;
+  });
+};
+
+// Active threshold options with replacement rules applied.
+const effectiveOptions = computed(() => {
+  if (!activeThreshold.value) return [];
+  return applyReplacements(activeThreshold.value.options);
+});
+
 // Build display entries, preserving group structure.
 const displayOptions = computed(() => {
   if (!activeThreshold.value) return [];
   const result = [];
-  for (const opt of activeThreshold.value.options) {
+  for (const opt of effectiveOptions.value) {
     const effectiveChance = getOptionChance(opt);
     if (opt.brainrot) {
       result.push({ type: 'single', name: opt.brainrot, effectiveChance });
@@ -279,7 +324,7 @@ const doMerge = () => {
   if (!activeThreshold.value) return;
   const roll = Math.random();
   let cumulative = 0;
-  for (const opt of activeThreshold.value.options) {
+  for (const opt of effectiveOptions.value) {
     cumulative += getOptionChance(opt);
     if (roll < cumulative) {
       let name;
@@ -296,7 +341,7 @@ const doMerge = () => {
     }
   }
   // Floating-point rounding fallback: pick last option's last entry.
-  const last = activeThreshold.value.options[activeThreshold.value.options.length - 1];
+  const last = effectiveOptions.value[effectiveOptions.value.length - 1];
   const lastMembers = resolveGroupMembers(last.group);
   const lastName = last.brainrot ?? lastMembers[lastMembers.length - 1];
   if (!lastName) return;

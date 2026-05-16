@@ -711,6 +711,18 @@
       ]
     }
   ],
+  "replacements": [
+    {
+      "requirement": ["67", "67"],
+      "replacement": ["Los 67"],
+      "replaces": { "brainrot": "Nooo My Bicicleteira" }
+    },
+    {
+      "requirement": ["Chimpanzini Kingini"],
+      "replacement": ["Los Chimpanzini Princinis"],
+      "replaces": { "group": "4" }
+    }
+  ],
   "groups": {
     "1": [
       "Fragola La La La",
