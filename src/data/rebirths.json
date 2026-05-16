@@ -148,5 +148,14 @@
       "Gigalitraktos Spidorobos"
     ],
     "bonus": "19x multiplier"
+  },
+  {
+    "tier": 19,
+    "requiredCash": 100000000000000000,
+    "requiredBrainrots": [
+      "DiggoBlock",
+      "Fishini Mechinini"
+    ],
+    "bonus": "20x multiplier"
   }
 ]
