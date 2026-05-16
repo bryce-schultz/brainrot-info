@@ -12,7 +12,6 @@ export default defineConfig({
       sources: {
         rebirths: 'src/data/rebirths.json',
         brainrots: 'src/data/brainrots.json',
-        special:   'src/data/special.json',
         types:     'src/data/types.json',
         traits:    'src/data/traits.json',
         machine:   'src/data/machine.json',
