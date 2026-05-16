@@ -5,6 +5,9 @@ import { combineJsonPlugin } from './vite-plugin-combine-json.js'
 
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+    __BUILD_TIMESTAMP__: JSON.stringify(Date.now().toString()),
+  },
   plugins: [
     vue(),
     imagetools(),

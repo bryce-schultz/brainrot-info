@@ -190,7 +190,7 @@ onMounted(async () => {
   };
 
   try {
-    const data = await fetchJson('/data.json');
+    const data = await fetchJson(`/data.json?v=${__BUILD_TIMESTAMP__}`);
     rebirthData.value = Array.isArray(data.rebirths) ? data.rebirths : [];
     brainrotsData.value = Array.isArray(data.brainrots)
       ? data.brainrots.map((b, i) => ({ ...b, id: i + 1 }))
