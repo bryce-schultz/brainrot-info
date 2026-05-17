@@ -7,17 +7,17 @@
   {
     "name": "Gold",
     "color": "#fbbf24",
-    "multiplier": 1.25
+    "multiplier": 2
   },
   {
     "name": "Diamond",
     "color": "#7dd3fc",
-    "multiplier": 1.5
+    "multiplier": 3
   },
   {
     "name": "Galaxy",
     "color": "#818cf8",
-    "multiplier": 3
+    "multiplier": 4
   },
   {
     "name": "Zombie",
