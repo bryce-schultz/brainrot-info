@@ -1,8 +1,14 @@
 [
   {
     "name": "Admin Abuse",
-    "start": "2026-05-17T13:20:00Z",
-    "end": "2026-05-17T14:20:00Z",
+    "start": "2026-05-23T13:20:00Z",
+    "end": "2026-05-23T14:20:00Z",
+    "reward": "Gaurenteed Secret"
+  },
+  {
+    "name": "Admin Abuse",
+    "start": "2026-05-24T13:20:00Z",
+    "end": "2026-05-24T14:20:00Z",
     "reward": "Gaurenteed Secret"
   }
 ]
