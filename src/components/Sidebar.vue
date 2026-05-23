@@ -42,7 +42,7 @@ import arrowIcon from '../assets/arrow-icon.svg';
 defineProps({
   currentPage: {
     type: String,
-    default: 'rebirth'
+    default: 'brainrots'
   }
 });
 
