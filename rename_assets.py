@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 Move files from src/assets/rename/ to src/assets/,
 converting filenames to lowercase with spaces replaced by hyphens.
