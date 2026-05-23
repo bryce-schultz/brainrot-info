@@ -1002,6 +1002,12 @@
     "produces": 5200000
   },
   {
+    "name": "Vikino Penguino",
+    "rarity": "Secret",
+    "price": 1200000000,
+    "produces": 5300000
+  },
+  {
     "name": "Los SantaCitos",
     "rarity": "Secret",
     "price": 1300000000,
@@ -1320,6 +1326,12 @@
     "produces": 23500000
   },
   {
+    "name": "Giga Bonito Cannoinito",
+    "rarity": "Secret",
+    "price": 11000000000,
+    "produces": 24000000 
+  },
+  {
     "name": "Chimpanzini Kingini",
     "rarity": "Secret",
     "price": 10000000000,
@@ -1354,6 +1366,12 @@
     "rarity": "Secret",
     "price": 13000000000,
     "produces": 30000000
+  },
+  {
+    "name": "Clown Clown Sahur",
+    "rarity": "Secret",
+    "price": 13500000000,
+    "produces": 31000000
   },
   {
     "name": "Klombo",
