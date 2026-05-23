@@ -10,7 +10,7 @@
         <img
           v-if="imgSrc"
           :src="imgSrc"
-          alt=""
+          :alt="`Image of ${brainrot.name}`"
           class="portrait-img"
           loading="lazy"
           decoding="async"

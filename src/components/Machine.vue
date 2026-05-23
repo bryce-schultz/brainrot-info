@@ -54,7 +54,7 @@
               <img
                 v-if="getImage(opt.name)"
                 :src="getImage(opt.name)"
-                alt=""
+                :alt="`Image of ${opt.name}`"
                 class="machine-odds-img"
               />
               <span v-else class="machine-odds-unknown">?</span>
@@ -77,7 +77,7 @@
                   <img
                     v-if="getImage(name)"
                     :src="getImage(name)"
-                    alt=""
+                    :alt="`Image of ${name}`"
                     class="machine-odds-img"
                   />
                   <span v-else class="machine-odds-unknown">?</span>
@@ -128,7 +128,7 @@
             <img
               v-if="getImage(mergeResult.name, 'md')"
               :src="getImage(mergeResult.name, 'md')"
-              alt=""
+              :alt="`Image of ${mergeResult.name}`"
               class="merge-result-img"
             />
             <span v-else class="merge-result-unknown">?</span>

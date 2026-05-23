@@ -36,7 +36,7 @@
             @click="$emit('select', rot)"
           >
             <div class="tile-image">
-              <img v-if="getImage(rot.name)" :src="getImage(rot.name)" alt="" class="tile-img" />
+              <img v-if="getImage(rot.name)" :src="getImage(rot.name)" :alt="`Image of ${rot.name}`" class="tile-img" />
               <span v-else>?</span>
             </div>
             <span class="tile-name">{{ rot.name }}</span>
