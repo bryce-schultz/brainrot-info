@@ -40,7 +40,13 @@
         v-else-if="currentPage === 'codes'"
         :codes="codesData"
       />
-      <AboutPage v-else-if="currentPage === 'about'" />
+      <AboutPage v-else-if="currentPage === 'about'" @navigate="handleNavigate" />
+      <PrivacyPage v-else-if="currentPage === 'privacy'" />
+
+      <div class="content-spacer"></div>
+      <footer class="site-footer">
+        <a href="#privacy" class="site-footer-link" @click.prevent="handleNavigate('privacy')">Privacy Policy</a>
+      </footer>
     </main>
   </div>
 </template>
@@ -57,6 +63,7 @@ const Machine       = defineAsyncComponent(() => import('./components/Machine.vu
 const EventsPage    = defineAsyncComponent(() => import('./components/EventsPage.vue'));
 const CodesPage     = defineAsyncComponent(() => import('./components/CodesPage.vue'));
 const AboutPage     = defineAsyncComponent(() => import('./components/AboutPage.vue'));
+const PrivacyPage   = defineAsyncComponent(() => import('./components/PrivacyPage.vue'));
 
 const currentPage = ref('brainrots');
 const rebirthData = ref([]);
@@ -71,7 +78,7 @@ const lastTrackedSearch = ref('');
 let searchConversionTimer = null;
 
 // Whitelist of valid page IDs — any unrecognised hash falls back to 'brainrots'.
-const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'events', 'codes', 'about']);
+const VALID_PAGES = new Set(['rebirth', 'calculator', 'brainrots', 'machine', 'events', 'codes', 'about', 'privacy']);
 
 const parseHash = () => {
   const hash = window.location.hash.slice(1);
@@ -109,7 +116,8 @@ const pageTitle = computed(() => {
     machine: 'Eternal Machine',
     events: 'Events',
     codes: 'Codes',
-    about: 'About'
+    about: 'About',
+    privacy: 'Privacy Policy'
   };
   return titles[currentPage.value] || 'Rebirth Guide';
 });
@@ -122,7 +130,8 @@ const pageSubtitle = computed(() => {
     machine: 'Simulate the Eternal Machine — pick 5 Mythic+ brainrots and see what you could get.',
     events: 'Track active and upcoming in-game events in your local timezone.',
     codes: 'Redeem these codes in-game for free rewards.',
-    about: ''
+    about: '',
+    privacy: ''
   };
   return subtitles[currentPage.value] || '';
 });
