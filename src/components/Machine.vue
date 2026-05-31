@@ -240,8 +240,20 @@ const activeReplacements = computed(() => {
     if (b) slotCounts[b.name] = (slotCounts[b.name] ?? 0) + 1;
   }
   return machineReplacements.value.filter(rule => {
+    const req = rule.requirement;
+    // New format: { anyOf, distinct } — require N distinct brainrots from a set.
+    if (req && !Array.isArray(req) && typeof req === 'object' && req.anyOf) {
+      const matchingNames = slots.value
+        .filter(b => b && req.anyOf.includes(b.name))
+        .map(b => b.name);
+      if (req.distinct != null) {
+        return new Set(matchingNames).size >= req.distinct;
+      }
+      return matchingNames.length >= (req.count ?? 1);
+    }
+    // Original format: array of required brainrot names (duplicates = multiples).
     const reqCounts = {};
-    for (const name of rule.requirement) {
+    for (const name of req) {
       reqCounts[name] = (reqCounts[name] ?? 0) + 1;
     }
     return Object.entries(reqCounts).every(([name, count]) => (slotCounts[name] ?? 0) >= count);
@@ -251,23 +263,57 @@ const activeReplacements = computed(() => {
 // Apply active replacements to a threshold's options list.
 const applyReplacements = (options) => {
   if (!activeReplacements.value.length) return options;
-  return options.map(opt => {
-    for (const rule of activeReplacements.value) {
-      const { replaces, replacement } = rule;
-      const matchesBrainrot = replaces.brainrot != null && opt.brainrot === replaces.brainrot;
-      const matchesGroup = replaces.group != null && String(opt.group) === String(replaces.group);
-      if (!matchesBrainrot && !matchesGroup) continue;
-      // Single replacement item → brainrot; multiple → inline group.
-      if (replacement.length === 1) {
-        const { group: _g, ...rest } = opt;
-        return { ...rest, brainrot: replacement[0] };
-      } else {
-        const { brainrot: _b, ...rest } = opt;
-        return { ...rest, group: replacement };
+  let result = [...options];
+  for (const rule of activeReplacements.value) {
+    if (rule['chance-reduction']) {
+      // Chance-reduction rule: lower a matched option's chance by `amount` and
+      // optionally add a new brainrot entry that receives that chance.
+      const { group: targetGroup, brainrot: targetBrainrot, amount } = rule['chance-reduction'];
+      const reducedAmount = Number(amount) || 0;
+      result = result.map(opt => {
+        const matchesGroup = targetGroup != null && String(opt.group) === String(targetGroup);
+        const matchesBrainrot = targetBrainrot != null && opt.brainrot === targetBrainrot;
+        if (!matchesGroup && !matchesBrainrot) return opt;
+        return {
+          ...opt,
+          chance: Math.max(0, (Number(opt.chance) || 0) - reducedAmount),
+          luckyChance: Math.max(0, (Number(opt.luckyChance) || 0) - reducedAmount),
+        };
+      });
+      if (rule.addition?.length) {
+        const additionOpt = rule.addition.length === 1
+          ? { brainrot: rule.addition[0], chance: reducedAmount, luckyChance: reducedAmount }
+          : { group: rule.addition, chance: reducedAmount, luckyChance: reducedAmount };
+        result = [...result, additionOpt];
       }
+    } else if (rule['chance-override']) {
+      // Chance-override rule: pin a matched option to exact chance values.
+      const { group: targetGroup, brainrot: targetBrainrot, chance, luckyChance } = rule['chance-override'];
+      result = result.map(opt => {
+        const matchesBrainrot = targetBrainrot != null && opt.brainrot === targetBrainrot;
+        const matchesGroup = targetGroup != null && String(opt.group) === String(targetGroup);
+        if (!matchesBrainrot && !matchesGroup) return opt;
+        return { ...opt, chance, luckyChance };
+      });
+    } else if (rule.replaces && rule.replacement) {
+      // Replacement rule: swap a matched option for different brainrot(s).
+      const { replaces, replacement } = rule;
+      result = result.map(opt => {
+        const matchesBrainrot = replaces.brainrot != null && opt.brainrot === replaces.brainrot;
+        const matchesGroup = replaces.group != null && String(opt.group) === String(replaces.group);
+        if (!matchesBrainrot && !matchesGroup) return opt;
+        // Single replacement item → brainrot; multiple → inline group.
+        if (replacement.length === 1) {
+          const { group: _g, ...rest } = opt;
+          return { ...rest, brainrot: replacement[0] };
+        } else {
+          const { brainrot: _b, ...rest } = opt;
+          return { ...rest, group: replacement };
+        }
+      });
     }
-    return opt;
-  });
+  }
+  return result;
 };
 
 // Active threshold options with replacement rules applied.

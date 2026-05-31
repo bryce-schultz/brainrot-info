@@ -645,8 +645,8 @@
       "options": [
         {
           "group": "3",
-          "chance": 0.375,
-          "luckyChance": 0.2
+          "chance": 0.365,
+          "luckyChance": 0.19
         },
         {
           "group": "4",
@@ -670,8 +670,13 @@
         },
         {
           "group": "6",
-          "chance": 0.015,
+          "chance": 0.02,
           "luckyChance": 0.03
+        },
+        {
+          "brainrot": "Ship Ship Ship Sahur",
+          "chance": 0.005,
+          "luckyChance": 0.01
         }
       ]
     },
@@ -680,13 +685,13 @@
       "options": [
         {
           "group": "3",
-          "chance": 0.255,
-          "luckyChance": 0.16
+          "chance": 0.245,
+          "luckyChance": 0.15
         },
         {
           "group": "4",
           "chance": 0.35,
-          "luckyChance": 0.3
+          "luckyChance": 0.29
         },
         {
           "group": "5",
@@ -702,6 +707,11 @@
           "brainrot": "Croissantini et Caffettino",
           "chance": 0.04,
           "luckyChance": 0.06
+        },
+        {
+          "brainrot": "Ship Ship Ship Sahur",
+          "chance": 0.01,
+          "luckyChance": 0.02
         },
         {
           "brainrot": "La Superior Combinacion",
@@ -721,6 +731,18 @@
       "requirement": ["Chimpanzini Kingini"],
       "replacement": ["Los Chimpanzini Princinis"],
       "replaces": { "group": "4" }
+    },
+    {
+      "requirement": ["Gigalitraktos Spidorobos"],
+      "chance-reduction": { "group": "4", "amount": 0.01 },
+      "addition": ["Los Gigalitraktos"]
+    },
+    {
+      "requirement": {
+        "anyOf": ["Bearini Plammini Guardini", "Garbagzilla", "Tiramisubmarini", "Cannelloni Dragoni"],
+        "distinct": 2
+      },
+      "chance-override": { "brainrot": "La Superior Combinacion", "chance": 0.02, "luckyChance": 0.03 }
     }
   ],
   "groups": {

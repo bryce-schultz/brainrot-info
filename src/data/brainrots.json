@@ -1464,6 +1464,12 @@
     "produces": 47000000
   },
   {
+    "name": "Din Doni Gongoni",
+    "rarity": "Secret",
+    "price": 24000000000,
+    "produces": 49000000
+  },
+  {
     "name": "Cannelloni Dragoni",
     "rarity": "Secret",
     "price": 100000000000,
@@ -1504,6 +1510,12 @@
     "rarity": "Secret",
     "price": 70000000000,
     "produces": 70000000
+  },
+  {
+    "name": "Salsicino Furiosino",
+    "rarity": "Eternal",
+    "price": 71000000000,
+    "produces": 71000000
   },
   {
     "name": "Gigalitraktos Spidorobos",
@@ -1548,10 +1560,22 @@
     "produces": 100000000
   },
   {
+    "name": "Ship Ship Ship Sahur",
+    "rarity": "Eternal",
+    "price": 210000000000,
+    "produces": 103000000
+  },
+  {
     "name": "Fishini Mechinini",
     "rarity": "Eternal",
     "price": 215000000000,
     "produces": 105000000
+  },
+  {
+    "name": "Los Gigalitraktos",
+    "rarity": "Eternal",
+    "price": 220000000000,
+    "produces": 110000000
   },
   {
     "name": "Cannone Maledettone",
